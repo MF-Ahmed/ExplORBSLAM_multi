@@ -1,0 +1,26 @@
+In file included from /opt/ros/noetic/include/ros/ros.h:40,
+                 from /home/usr/data/ExplOrbSLAM_working/src/src/frontier_detector/src/area_calculator.cpp:1:
+/home/usr/data/ExplOrbSLAM_working/src/src/frontier_detector/src/area_calculator.cpp: In function ‘int main(int, char**)’:
+/home/usr/data/ExplOrbSLAM_working/src/src/frontier_detector/src/area_calculator.cpp:78:14: warning: format ‘%s’ expects argument of type ‘char*’, but argument 8 has type ‘std::string’ {aka ‘std::__cxx11::basic_string<char>’} [-Wformat=]
+   78 |     ROS_INFO("map topic name : [%s]", topic_name);
+      |              ^~~~~~~~~~~~~~~~~~~~~~~
+/opt/ros/noetic/include/ros/console.h:351:165: note: in definition of macro ‘ROSCONSOLE_PRINT_AT_LOCATION_WITH_FILTER’
+  351 |     ::ros::console::print(filter, __rosconsole_define_location__loc.logger_, __rosconsole_define_location__loc.level_, __FILE__, __LINE__, __ROSCONSOLE_FUNCTION__, __VA_ARGS__)
+      |                                                                                                                                                                     ^~~~~~~~~~~
+/opt/ros/noetic/include/ros/console.h:390:7: note: in expansion of macro ‘ROSCONSOLE_PRINT_AT_LOCATION’
+  390 |       ROSCONSOLE_PRINT_AT_LOCATION(__VA_ARGS__); \
+      |       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/opt/ros/noetic/include/ros/console.h:575:35: note: in expansion of macro ‘ROS_LOG_COND’
+  575 | #define ROS_LOG(level, name, ...) ROS_LOG_COND(true, level, name, __VA_ARGS__)
+      |                                   ^~~~~~~~~~~~
+/opt/ros/noetic/include/rosconsole/macros_generated.h:110:23: note: in expansion of macro ‘ROS_LOG’
+  110 | #define ROS_INFO(...) ROS_LOG(::ros::console::levels::Info, ROSCONSOLE_DEFAULT_NAME, __VA_ARGS__)
+      |                       ^~~~~~~
+/home/usr/data/ExplOrbSLAM_working/src/src/frontier_detector/src/area_calculator.cpp:78:5: note: in expansion of macro ‘ROS_INFO’
+   78 |     ROS_INFO("map topic name : [%s]", topic_name);
+      |     ^~~~~~~~
+/home/usr/data/ExplOrbSLAM_working/src/src/frontier_detector/src/area_calculator.cpp:78:34: note: format string is defined here
+   78 |     ROS_INFO("map topic name : [%s]", topic_name);
+      |                                 ~^
+      |                                  |
+      |                                  char*

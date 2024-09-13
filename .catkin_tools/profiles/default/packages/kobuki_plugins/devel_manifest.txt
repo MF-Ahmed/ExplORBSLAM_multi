@@ -1,0 +1,6 @@
+src/3dParty/kobuki_plugins
+/home/usr/data/ExplOrbSLAM_working/devel/.private/kobuki_plugins/cmake.lock /home/usr/data/ExplOrbSLAM_working/devel/./cmake.lock
+/home/usr/data/ExplOrbSLAM_working/devel/.private/kobuki_plugins/share/kobuki_plugins/cmake/kobuki_pluginsConfig.cmake /home/usr/data/ExplOrbSLAM_working/devel/share/kobuki_plugins/cmake/kobuki_pluginsConfig.cmake
+/home/usr/data/ExplOrbSLAM_working/devel/.private/kobuki_plugins/share/kobuki_plugins/cmake/kobuki_pluginsConfig-version.cmake /home/usr/data/ExplOrbSLAM_working/devel/share/kobuki_plugins/cmake/kobuki_pluginsConfig-version.cmake
+/home/usr/data/ExplOrbSLAM_working/devel/.private/kobuki_plugins/lib/libgazebo_ros_kobuki.so /home/usr/data/ExplOrbSLAM_working/devel/lib/libgazebo_ros_kobuki.so
+/home/usr/data/ExplOrbSLAM_working/devel/.private/kobuki_plugins/lib/pkgconfig/kobuki_plugins.pc /home/usr/data/ExplOrbSLAM_working/devel/lib/pkgconfig/kobuki_plugins.pc

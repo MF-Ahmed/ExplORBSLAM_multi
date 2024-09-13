@@ -1,0 +1,18 @@
+global_costmap:
+  global_frame: map
+  robot_base_frame: base_link
+  update_frequency: 0.5
+  publish_frequency: 1.5
+
+  always_send_full_costmap: true
+  transform_tolerance: 0.5
+
+  static_map: false
+  rolling_window: false
+  
+  width: 15
+  height: 15
+  origin_x: -7.5
+  origin_y: -7.5
+  
+  resolution: 0.01

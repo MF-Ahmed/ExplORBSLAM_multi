@@ -1,0 +1,122 @@
+<!-- jplaced
+ 2022, Universidad de Zaragoza -->
+
+<!-- Launch file for the random frontier exploration -->
+<launch>
+
+    <param name="namespace_init_count"  value="1"/>
+    <param name="use_sim_time"          value="true" />
+
+    <arg name="robot_name"/>
+    <arg name="agent_number"/>
+    <arg name="num_robots"/>
+
+    <!-- saved frontiers colors-->
+    <arg name="color0"/>  
+    <arg name="color1"/>
+    <arg name="color2"/>
+
+   
+
+    <arg name="robot_namespace"     value="$(arg robot_name)"/>
+    <arg name="robot_number"        value="$(arg agent_number)"/>
+    <!-- <arg name="map_topic_name"      value="/gridmapper/rectified_map"/> -->
+    <arg name="map_topic_name"      value="/gridmapper/projected_map"/> 
+    <arg name="collab_map_topic_name" value="/mergedmap"/>
+    <arg name="global_frame"        value="$(arg robot_namespace)/map"/>
+    <arg name="robot_frame"         value="$(arg robot_namespace)/base_link"/>
+    <arg name="camInfo_topic_name"  value="/$(arg robot_namespace)/camera/rgb/camera_info"/>
+    <arg name="gpu"                 value="true" />
+    <arg name="camera_type"         value="rgbd" /> 
+
+    <include file="$(find frontier_detector)/launch/frontiers.launch">
+        <arg name="map_topic_name"  value="$(arg map_topic_name)"/>
+        <arg name="global_frame"    value="$(arg global_frame)"/>
+        <arg name="robot_namespace" value="$(arg robot_namespace)"/>
+        <arg name="gpu"             value="$(arg gpu)"/>
+        <arg name="camera_type"     value="$(arg camera_type)"/>
+        <arg name="robot_number"    value="$(arg robot_number)"/>
+    </include>
+      
+    <node pkg="graph_d_exploration" type="GraphDrawer.py" name="G_publisher" output="screen">
+        <param name="camera_type"   value="$(arg camera_type)"/>
+        <param name="namespace" value="$(arg robot_namespace)"/>
+
+        <remap from="/orb_slam2_rgbd/edge_list" to="orb_slam2_rgbd/edge_list"/>
+        <remap from="/orb_slam2_rgbd/vertex_list" to="orb_slam2_rgbd/vertex_list"/>
+    </node>
+
+
+
+
+    <node pkg="graph_d_exploration" type="Controller.py" name="decision_maker" output="screen">
+        <param name="map_topic"              value="$(arg map_topic_name)"/>
+        <param name="color0" value="$(arg color0)"/> 
+        <param name="color1" value="$(arg color1)"/>
+        <param name="color2" value="$(arg color2)"/>
+        <param name="cameraInfo_topic"       value="$(arg camInfo_topic_name)"/>
+        <param name="global_frame"           value="$(arg global_frame)"/>
+        <param name="robot_frame"            value="$(arg robot_frame)"/>
+
+        <param name="frontiers_topic"        value="iou/iou_frontiers_filtered/points"/> 
+        <!-- <param name="frontiers_topic"        value="filter/filtered_points"/> -->
+        
+        
+        <param name="n_robots"               value="$(arg num_robots)"/>
+        <param name="namespace"              value="$(arg robot_namespace)"/>
+        <param name="delay_after_assignment" value="0.5"/>
+        <param name="rate"                   value="10"/>
+        <param name="type"                   value="random"/>
+        <param name="show_debug_path"        value="true"/>
+        <param name="exploring_time"         value="9000"/>
+        <param name="enable_gpu_comp"        value="$(arg gpu)"/>
+        <param name="hallucinated_plan_th"   value="60"/>
+        <param name="camera_type"            value="$(arg camera_type)"/>        
+
+         <remap from="/iou/iou_frontiers_filtered/points" to="iou/iou_frontiers_filtered/points"/> 
+        <!-- <remap from="/filter/filtered_points" to="filter/filtered_points"/> -->
+
+        <remap from="$(arg robot_namespace)/gridmapper/rectified_map" to="gridmapper/rectified_map"/>
+        <remap from="$(arg robot_namespace)/gridmapper/projected_map" to="gridmapper/projected_map"/>
+
+        <remap from="$(arg robot_namespace)/move_base/cancel" to="move_base/cancel"/>
+        <remap from="$(arg robot_namespace)/move_base/feedback" to="move_base/feedback"/>
+        <remap from="$(arg robot_namespace)/move_base/goal" to="move_base/goal"/>
+        <remap from="$(arg robot_namespace)/move_base/result" to="move_base/result"/>
+        <remap from="$(arg robot_namespace)/move_base/status" to="move_base/status"/>
+
+        <remap from="/orb_slam2_rgbd/edge_list" to="orb_slam2_rgbd/edge_list"/>
+        <remap from="/orb_slam2_rgbd/info/state" to="orb_slam2_rgbd/info/state"/>
+        <remap from="/orb_slam2_rgbd/point_list" to="orb_slam2_rgbd/point_list"/>
+        <remap from="/orb_slam2_rgbd/vertex_list" to="orb_slam2_rgbd/vertex_list"/>
+        
+    </node>
+
+    
+ 
+    <!--
+    <node pkg="graph_d_exploration" type="d_opti_Publisher.py" name="d_opti_Publisher" output="screen">
+    <param name="cameraInfo_topic"       value="$(arg camInfo_topic_name)"/>
+    <param name="global_frame"           value="$(arg global_frame)"/>
+    <param name="robot_frame"            value="$(arg robot_frame)"/>
+    <param name="frontiers_topic"        value="filter/filtered_points"/>
+    <param name="n_robots"               value="$(arg num_robots)"/>
+    <param name="namespace"              value="$(arg robot_namespace)"/>
+    <param name="delay_after_assignment" value="0.5"/>
+    <param name="rate"                   value="100"/>
+    <param name="type"                   value="random"/>
+    <param name="enable_gpu_comp"        value="$(arg gpu)"/>
+    <param name="hallucinated_plan_th"   value="60"/>
+    <param name="camera_type"            value="$(arg camera_type)"/>
+
+    <remap from="/orb_slam2_rgbd/edge_list" to="orb_slam2_rgbd/edge_list"/>
+    <remap from="/orb_slam2_rgbd/info/state" to="orb_slam2_rgbd/info/state"/>
+    <remap from="/orb_slam2_rgbd/point_list" to="orb_slam2_rgbd/point_list"/>
+    <remap from="/orb_slam2_rgbd/vertex_list" to="orb_slam2_rgbd/vertex_list"/>
+
+    </node>
+    -->
+    
+    
+
+</launch>

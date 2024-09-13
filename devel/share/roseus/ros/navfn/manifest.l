@@ -1,0 +1,1 @@
+/home/usr/data/ExplOrbSLAM_working/devel/.private/navfn/share/roseus/ros/navfn/manifest.l

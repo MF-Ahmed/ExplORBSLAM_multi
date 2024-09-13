@@ -1,0 +1,90 @@
+<launch>
+
+    <arg name="gazebo_gui" value="false"/>
+    <arg name="gazebo_verbose" value="false"/>
+    
+    <arg name="robot0_ns" value="robot_0"/>
+    <arg name="agent_0" value="0"/>
+    <arg name="color00"  value="1.0"/>
+    <arg name="color01"  value="0.0"/>
+    <arg name="color02"  value="0.0"/>
+        
+    <arg name="robot1_ns" value="robot_1"/>
+    <arg name="agent_1" value="1"/>  
+    <arg name="color10"  value="0.0"/>
+    <arg name="color11"  value="1.0"/>
+    <arg name="color12"  value="0.0"/>  
+    
+    <arg name="robot2_ns" value="robot_2"/>
+    <arg name="agent_2" value="2"/>
+    <arg name="color20"  value="0.0"/>
+    <arg name="color21"  value="0.0"/>
+    <arg name="color22"  value="0.1"/>      
+        
+    <arg name="drone0_ns" value="drone_0"/>
+    <arg name="agent_3" value="3"/>        
+    <arg name="num_robots" value="2"/>
+
+   <!--<arg name="config_file" default="$(find graph_d_exploration)/cfg/plot_jugglerconfig.xml" /> -->  
+  <!-- <node pkg="plotjuggler" type="plotjuggler" name="plotjuggler" args="-l $(arg config_file)" /> -->  
+    
+
+
+  
+     <group ns="$(arg robot0_ns)">
+        <include file="$(find graph_d_exploration)/launch/autonomous_agent.launch">
+            <param name="tf_prefix" value="$(arg robot0_ns)"/>
+            <arg name="robot_name" value="$(arg robot0_ns)"/>
+            <arg name="agent_number" value="$(arg agent_0)"/>
+            <arg name="num_robots" value="$(arg num_robots)"/>
+            <arg name="color0" value="$(arg color00)"/>
+            <arg name="color1" value="$(arg color01)"/>
+            <arg name="color2" value="$(arg color02)"/>     
+        </include>      
+
+            
+    </group> 
+     
+     <group ns="$(arg robot1_ns)">
+        <include file="$(find graph_d_exploration)/launch/autonomous_agent.launch">
+            <param name="tf_prefix" value="$(arg robot1_ns)"/>
+            <arg name="robot_name" value="$(arg robot1_ns)"/>
+            <arg name="agent_number" value="$(arg agent_1)"/>
+            <arg name="num_robots" value="$(arg num_robots)"/>
+            <arg name="color0" value="$(arg color10)"/>
+            <arg name="color1" value="$(arg color11)"/>
+            <arg name="color2" value="$(arg color12)"/>              
+        </include>
+     
+       
+    </group> 
+
+
+  <!--
+     <group ns="$(arg robot3_ns)">
+        <include file="$(find graph_d_exploration)/launch/autonomous_agent.launch">
+            <param name="tf_prefix" value="$(arg robot3_ns)"/>
+            <arg name="robot_name" value="$(arg robot3_ns)"/>
+            <arg name="agent_number" value="$(arg agent_3)"/>
+            <arg name="num_robots" value="$(arg num_robots)"/>
+            <arg name="color0" value="$(arg color20)"/>
+            <arg name="color1" value="$(arg color21)"/>
+            <arg name="color2" value="$(arg color22)"/>              
+        </include>
+    </group>     
+     
+   
+
+    <group ns="$(arg drone0_ns)">
+    <include file="$(find graph_d_exploration)/launch/autonomous_agent_drone.launch">
+            <arg name="robot_name" value="$(arg drone0_ns)"/>
+            <arg name="agent_number" value="$(arg agent_3)"/>
+    </include>
+ 
+    </group>
+    -->
+
+  <node name="saved_goals_logger_csv" pkg="frontier_detector" type="saved_goals_logger.py" output="screen"/>
+               
+
+</launch>

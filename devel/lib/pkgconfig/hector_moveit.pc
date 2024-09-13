@@ -1,0 +1,1 @@
+/home/usr/data/ExplOrbSLAM_working/devel/.private/hector_moveit/lib/pkgconfig/hector_moveit.pc

@@ -1,0 +1,1 @@
+/home/usr/data/ExplOrbSLAM_working/devel/.private/carrot_planner/lib/pkgconfig/carrot_planner.pc

@@ -1,0 +1,1 @@
+/home/usr/data/ExplOrbSLAM_working/devel/.private/hector_moveit_gazebo_worlds/lib/pkgconfig/hector_moveit_gazebo_worlds.pc

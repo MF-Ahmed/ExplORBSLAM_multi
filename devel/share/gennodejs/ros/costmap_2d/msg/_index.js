@@ -1,0 +1,1 @@
+/home/usr/data/ExplOrbSLAM_working/devel/.private/costmap_2d/share/gennodejs/ros/costmap_2d/msg/_index.js

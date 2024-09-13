@@ -1,0 +1,5 @@
+[  0%] Built target hector_uav_msgs_generate_messages_cpp
+[ 62%] Built target hector_gazebo_ros_baro
+[ 62%] Built target hector_gazebo_quadrotor_simple_controller
+[ 87%] Built target hector_gazebo_quadrotor_propulsion
+[100%] Built target hector_gazebo_quadrotor_aerodynamics

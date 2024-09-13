@@ -1,0 +1,1 @@
+/home/usr/data/ExplOrbSLAM_working/devel/.private/frontier_detector/share/common-lisp/ros/frontier_detector/msg/frontier_detector-msg.asd

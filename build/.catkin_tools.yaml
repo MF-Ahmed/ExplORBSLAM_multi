@@ -1,0 +1,6 @@
+devel_space: /home/usr/data/ExplOrbSLAM_working/devel
+install: false
+install_space: /home/usr/data/ExplOrbSLAM_working/install
+profile: default
+source_space: /home/usr/data/ExplOrbSLAM_working/src
+workspace: /home/usr/data/ExplOrbSLAM_working

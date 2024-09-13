@@ -1,0 +1,159 @@
+<!-- jplaced
+ 2022, Universidad de Zaragoza -->
+
+<!--  Launch file for single robot on Gazebo -->
+
+<launch>
+
+    <arg name="gazebo_gui" value="false"/>
+    <arg name="gazebo_verbose" value="false"/>
+
+
+ <!-- House -->
+  <arg name="robot1_ns" value="robot_1"/>
+  <arg name="agent_1" value="1"/>
+  <arg name="robot_1_x" value="0.0"/>
+  <arg name="robot_1_y" value="0.0"/>
+  <arg name="robot_1_z" value="0.3"/>
+  <arg name="robot_1_R" value="0.0"/>
+  <arg name="robot_1_P" value="0.0"/>
+  <arg name="robot_1_Y" value="0.0"/>
+    
+  
+  <arg name="robot2_ns" value="robot_2"/>
+  <arg name="agent_2" value="2"/>
+  <arg name="robot_2_x" value="-1.0"/>
+  <arg name="robot_2_y" value="-4.0"/>
+  <arg name="robot_2_z" value="0.3"/>
+  <arg name="robot_2_R" value="0.0"/>
+  <arg name="robot_2_P" value="0.0"/>
+  <arg name="robot_2_Y" value="0.0"/>
+  
+
+  <arg name="drone1_ns" value="drone_1"/>
+  <arg name="agent_3" value="3"/>
+  <arg name="drone_1_x" value="8.0"/>
+  <arg name="drone_1_y" value= "-5.0"/>
+  <arg name="drone_1_z" value="0.2"/>
+  <arg name="drone_1_R" value="0.0"/>
+  <arg name="drone_1_P" value="0.0"/>
+  <arg name="drone_1_Y" value="0.0"/>
+    
+
+    <env name="GAZEBO_RESOURCE_PATH" value="$(find robot_description)/meshes"/>
+    <env name="GAZEBO_MODEL_PATH" value="$(find robot_description)/models/aws/house"/>
+  <!-- <env name="GAZEBO_RESOURCE_PATH" value="$(find hector_moveit_gazebo_worlds)/worlds/hospital/meshes"/> -->
+  <!-- <env name="GAZEBO_MODEL_PATH" value="$(find hector_moveit_gazebo_worlds)/worlds/hospital/models/"/>  -->
+  <!-- <arg name="world_name" value="$(find hector_moveit_gazebo_worlds)/worlds/hospital_ORBSLAM.world"/>  -->
+
+  <!-- <arg name="world_name" value="$(find hector_moveit_gazebo_worlds)/worlds/garden2.world"/>  -->
+  <!-- <arg name="world_name" value="$(find hector_moveit_gazebo_worlds)/worlds/aws_bookstore.world"/> -->
+  <!-- <arg name="world_name" value="$(find robot_description)/worlds/aws_house.world"/> -->
+  <!-- <arg name="world_name" value="worlds/willowgarage.world"/> -->
+
+
+    
+    <!-- ######################################## WORLD ######################################## -->
+    <!-- Launch world -->
+    <include file="$(find gazebo_ros)/launch/empty_world.launch">
+        <arg name="gui" value="$(arg gazebo_gui)"/>
+        <arg name="use_sim_time" value="true"/>
+        <arg name="debug" value="0"/>
+        <arg name="world_name" value="$(find robot_description)/worlds/aws_house.world"/> 
+        <arg name="verbose" value="$(arg gazebo_verbose)"/>
+    </include>
+
+
+    <!-- ######################################## ROSBOT 1 ######################################## -->
+
+    <include file="$(find robot_description)/launch/include/robot.launch.xml">
+        <arg name="robot_name" value="$(arg robot1_ns)"/>
+        <arg name="init_pose" value="-x $(arg robot_1_x) -y $(arg robot_1_y) -z $(arg robot_1_z)
+                                     -R $(arg robot_1_R) -P $(arg robot_1_P) -Y $(arg robot_1_Y)"/>
+        <arg name="agent_number" value="$(arg agent_1)"/>
+    </include>   
+
+    <group ns="$(arg robot1_ns)">
+        <include file="$(find robot_description)/launch/include/move_base_ORBSLAM.launch">
+            <arg name="namespace" value="$(arg robot1_ns)"/>
+            <arg name="agent_number" value="$(arg agent_1)"/>
+        </include>
+    </group>
+
+    <!-- ######################################## ROSBOT 2 ######################################## -->
+    <!--
+    <include file="$(find robot_description)/launch/include/robot.launch.xml">
+        <arg name="robot_name" value="$(arg robot2_ns)"/>
+        <arg name="init_pose" value="-x $(arg robot_2_x) -y $(arg robot_2_y) -z $(arg robot_2_z)
+                                     -R $(arg robot_2_R) -P $(arg robot_2_P) -Y $(arg robot_2_Y)"/>
+        <arg name="agent_number" value="$(arg agent_2)"/>
+    </include>   
+
+    <group ns="$(arg robot2_ns)">
+        <include file="$(find robot_description)/launch/include/move_base_ORBSLAM.launch">
+            <arg name="namespace" value="$(arg robot2_ns)"/>
+            <arg name="agent_number" value="$(arg agent_2)"/>
+        </include>
+    </group>
+   -->
+    <!-- <remap from="/map" to="/robot_1/map"/> -->
+
+    <!-- ######################################## Drone 1 ######################################## -->
+ <!--
+  <group ns="$(arg drone1_ns)">
+    <include file="$(find hector_quadrotor_gazebo)/launch/spawn_quadrotor.launch" >    
+      <arg name="name" value="$(arg drone1_ns)"/>
+      <arg name="tf_prefix" value="$(arg drone1_ns)"/>
+        <arg name="x" value="$(arg drone_1_x)" />
+        <arg name="y" value="$(arg drone_1_y)" />
+        <arg name="z" value="$(arg drone_1_z)" />     
+      <arg name="model" value="$(find hector_quadrotor_description)/urdf/quadrotor_with_asus_rotated.gazebo.xacro"/> 
+      <arg name="controllers" value="
+          controller/attitude
+          controller/velocity
+          controller/position
+          "/>
+    </include>
+    <include file="$(find robot_description)/launch/include/drone_orbslam.launch">
+    <arg name="namespace" value="$(arg drone1_ns)"/> 
+    <arg name="agent_number" value="$(arg agent_3)"/>
+    </include>    
+
+    <include file="$(find hector_geotiff_launch)/launch/geotiff_mapper.launch">
+    <arg name="trajectory_publish_rate" value="4"/>
+  </include>     
+  </group>
+-->
+  
+    
+    <node name="map_server1" pkg="map_server" type="map_server" args="/home/usr/data/ExplOrbSLAM_working/src/src/maps/house/aws_house.yaml" output="screen">
+    <!-- <remap from="/map" to="/map1"/>   -->
+   
+    </node> 
+
+    <!-- Republish the map on a different topic -->
+    <!-- <node name="republish_map_node" pkg="topic_tools" type="relay" args="map1 map2"/>  -->
+
+    
+
+    <!-- ######################################## GLOBAL MAP -> LOCAL MAP ######################################## -->
+    <node name="$(arg robot1_ns)_MapAlign1" pkg="tf" type="static_transform_publisher" args="$(arg robot_1_x) $(arg robot_1_y) $(arg robot_1_z) $(arg robot_1_Y) $(arg robot_1_P) $(arg robot_1_R) /map /$(arg robot1_ns)/map 50"/>
+    
+   <!--  <node name="$(arg robot2_ns)_MapAlign1" pkg="tf" type="static_transform_publisher" args="$(arg robot_2_x) $(arg robot_2_y) $(arg robot_2_z) $(arg robot_2_Y) $(arg robot_2_P) $(arg robot_2_R) /map /$(arg robot2_ns)/map 50"/>  -->
+
+  
+   <!-- <node name="$(arg robot1_ns)_MapAlign2" pkg="tf" type="static_transform_publisher" args="0 0 0 0 0 0 /odomC0 /map1 50"/>  -->
+    <!-- <node name="$(arg robot2_ns)_MapAlign2" pkg="tf" type="static_transform_publisher" args="0 0 0 0 0 0 /odomC1 /map2 50"/> -->
+
+
+
+  
+  <!-- ######################################## GLOBAL MAP -> LOCAL MAP ######################################## -->
+   <!-- <node name="$(arg drone1_ns)_MapAlign" pkg="tf" type="static_transform_publisher" args="$(arg drone_1_x)  -3.5 $(arg drone_1_z) -0.45 $(arg drone_1_P) $(arg drone_1_R)  /map  /$(arg drone1_ns)/map 50"/> -->
+
+
+    <!-- Launch visualizer -->
+    z<!-- <node pkg="rviz" type="rviz" name="rviz" args="-d $(find robot_description)/param/rviz/config_r1_r2.rviz"/>  -->
+    
+
+</launch>

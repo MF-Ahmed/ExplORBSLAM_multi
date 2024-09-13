@@ -1,0 +1,33 @@
+<!-- jplaced
+ 2022, Universidad de Zaragoza -->
+
+<!-- Launch file for the random frontier exploration -->
+<launch>
+
+    <param name="namespace_init_count"  value="1"/>
+    <param name="use_sim_time"          value="true" />
+
+    <arg name="robot_name"/>
+    <arg name="agent_number"/>
+
+    <arg name="robot_namespace"     value="$(arg robot_name)"/>
+    <arg name="robot_number"        value="$(arg agent_number)"/>
+    <arg name="map_topic_name"      value="$(arg robot_name)/gridmapper/rectified_map"/>
+    <arg name="global_frame"        value="$(arg robot_namespace)/map"/>
+    <arg name="robot_frame"         value="$(arg robot_namespace)/world"/>
+    <arg name="camInfo_topic_name"  value="/$(arg robot_namespace)/camera/rgb/camera_info"/>
+    <arg name="gpu"                 value="true" />
+    <arg name="camera_type"         value="rgbd" /> 
+    
+
+
+    <include file="$(find frontier_detector)/launch/mapping_drone.launch">
+        <arg name="map_topic_name"  value="$(arg map_topic_name)"/>
+        <arg name="global_frame"    value="$(arg global_frame)"/>
+        <arg name="robot_namespace" value="$(arg robot_namespace)"/>
+        <arg name="gpu"             value="$(arg gpu)"/>
+        <arg name="camera_type"     value="$(arg camera_type)"/>
+        <arg name="robot_number"    value="$(arg robot_number)"/>
+    </include>
+        
+</launch>

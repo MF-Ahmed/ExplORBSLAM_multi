@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Site BuildName="(empty)"
+	BuildStamp="20240416-1602-Experimental"
+	Name="po-ahmed-3571"
+	Generator="ctest-3.16.3"
+	CompilerName="/usr/bin/c++"
+	CompilerVersion="9.4.0"
+	OSName="Linux"
+	Hostname="po-ahmed-3571"
+	OSRelease="5.15.0-102-generic"
+	OSVersion="#112~20.04.1-Ubuntu SMP Thu Mar 14 14:28:24 UTC 2024"
+	OSPlatform="x86_64"
+	Is64Bits="1"
+	VendorString="GenuineIntel"
+	VendorID="Intel Corporation"
+	FamilyID="6"
+	ModelID="154"
+	ProcessorCacheSize="24576"
+	NumberOfLogicalCPU="20"
+	NumberOfPhysicalCPU="14"
+	TotalVirtualMemory="2047"
+	TotalPhysicalMemory="31776"
+	LogicalProcessorsPerPhysical="1"
+	ProcessorClockFrequency="4343.63"
+	>
+	<Testing>
+		<StartDateTime>Apr 16 18:02 CEST</StartDateTime>
+		<StartTestTime>1713283369</StartTestTime>
+		<TestList/>
+		<EndDateTime>Apr 16 18:02 CEST</EndDateTime>
+		<EndTestTime>1713283369</EndTestTime>
+		<ElapsedMinutes>0</ElapsedMinutes>
+	</Testing>
+</Site>

@@ -1,0 +1,10 @@
+controller_list:
+  - name: fake_drone_moveit_controller
+    type: $(arg fake_execution_type)
+    joints:
+      - virtual_joint
+initial:  # Define initial robot poses per group
+#  - group: drone_moveit
+#    pose: home
+
+  []

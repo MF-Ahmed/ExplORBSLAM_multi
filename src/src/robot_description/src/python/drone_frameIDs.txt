@@ -1,0 +1,72 @@
+[INFO] [1696584740.356609, 50.006000]: Available TF Frames: Frame robot_1/camera_depth_frame exists with parent robot_1/camera_link.
+Frame robot_1/camera_link exists with parent robot_1/base_link.
+Frame robot_1/camera_depth_optical_frame exists with parent robot_1/camera_depth_frame.
+Frame robot_1/camera_rgb_frame exists with parent robot_1/camera_link.
+Frame robot_1/camera_rgb_optical_frame exists with parent robot_1/camera_rgb_frame.
+Frame robot_1/laser0_frame exists with parent robot_1/base_link.
+Frame robot_1/sonar_link exists with parent robot_1/base_link.
+Frame robot_1/map exists with parent map.
+Frame robot_1/ground_truth/base_footprint exists with parent robot_1/ground_truth/world.
+Frame robot_1/ground_truth/base_stabilized exists with parent robot_1/ground_truth/base_footprint.
+Frame robot_1/ground_truth/base_link exists with parent robot_1/ground_truth/base_stabilized.
+
+
+CAmera Info 
+
+
+R: [1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0]
+P: [524.2422531097977, 0.0, 320.5, -0.0, 0.0, 524.2422531097977, 240.5, 0.0, 0.0, 0.0, 1.0, 0.0]
+binning_x: 0
+binning_y: 0
+roi: 
+  x_offset: 0
+  y_offset: 0
+  height: 0
+  width: 0
+  do_rectify: False
+---
+header: 
+  seq: 4939
+  stamp: 
+    secs: 247
+    nsecs: 850000000
+  frame_id: "drone_1/camera_depth_optical_frame"
+height: 480
+width: 640
+distortion_model: "plumb_bob"
+D: [0.0, 0.0, 0.0, 0.0, 0.0]
+K: [524.2422531097977, 0.0, 320.5, 0.0, 524.2422531097977, 240.5, 0.0, 0.0, 1.0]
+R: [1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0]
+P: [524.2422531097977, 0.0, 320.5, -0.0, 0.0, 524.2422531097977, 240.5, 0.0, 0.0, 0.0, 1.0, 0.0]
+binning_x: 0
+binning_y: 0
+roi: 
+  x_offset: 0
+  y_offset: 0
+  height: 0
+  width: 0
+  do_rectify: False
+---
+header: 
+  seq: 4940
+  stamp: 
+    secs: 247
+    nsecs: 900000000
+  frame_id: "drone_1/camera_depth_optical_frame"
+height: 480
+width: 640
+distortion_model: "plumb_bob"
+D: [0.0, 0.0, 0.0, 0.0, 0.0]
+K: [524.2422531097977, 0.0, 320.5, 0.0, 524.2422531097977, 240.5, 0.0, 0.0, 1.0]
+R: [1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0]
+P: [524.2422531097977, 0.0, 320.5, -0.0, 0.0, 524.2422531097977, 240.5, 0.0, 0.0, 0.0, 1.0, 0.0]
+binning_x: 0
+binning_y: 0
+roi: 
+  x_offset: 0
+  y_offset: 0
+  height: 0
+  width: 0
+  do_rectify: False
+---
+

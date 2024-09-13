@@ -1,0 +1,15 @@
+<!-- -->
+
+<!-- Launch file -->
+<launch>   
+ <arg name="area_map_topic" value="/mergedmap"/>
+
+  <param name="area_map_topic" value="$(arg area_map_topic)" /> 
+
+  <node name="occupancy_area_calculator" pkg="frontier_detector" type="frontier_detector_area" output="screen"> 
+  
+  </node>
+  
+</launch>
+
+

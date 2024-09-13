@@ -1,0 +1,11 @@
+/home/usr/data/ExplOrbSLAM_working/src/src/frontier_detector/src/compute_iou.cpp: In constructor ‘FrontierDetector::FrontierDetector()’:
+/home/usr/data/ExplOrbSLAM_working/src/src/frontier_detector/src/compute_iou.cpp:32:9: error: ‘sub3_’ was not declared in this scope; did you mean ‘sub1_’?
+   32 |         sub3_ = nh.subscribe<OccupancyGrid>(topic2, 10, &FrontierDetector::mapCallback3, this);
+      |         ^~~~~
+      |         sub1_
+/home/usr/data/ExplOrbSLAM_working/src/src/frontier_detector/src/compute_iou.cpp:32:76: error: ‘mapCallback3’ is not a member of ‘FrontierDetector’
+   32 |         sub3_ = nh.subscribe<OccupancyGrid>(topic2, 10, &FrontierDetector::mapCallback3, this);
+      |                                                                            ^~~~~~~~~~~~
+make[2]: *** [CMakeFiles/frontier_detector_iou.dir/build.make:63: CMakeFiles/frontier_detector_iou.dir/src/compute_iou.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:2658: CMakeFiles/frontier_detector_iou.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2

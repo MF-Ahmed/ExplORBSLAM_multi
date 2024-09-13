@@ -1,0 +1,18 @@
+global_costmap:
+  global_frame: robot_1/map  #cahnging this to map craetes problems for goal frame
+  robot_base_frame: robot_1/base_link
+  update_frequency: 0.5
+  publish_frequency: 1.5
+
+  always_send_full_costmap: true
+  transform_tolerance: 2
+
+  static_map: false
+  rolling_window: false
+  
+  width: 25
+  height: 25
+  origin_x: -7.5
+  origin_y: -7.5
+  
+  resolution: 0.01

@@ -1,0 +1,68 @@
+<!-- jplaced@unizar.es
+ 2021, Universidad de Zaragoza -->
+
+<!-- Move base with SLAM system -->
+
+<launch>
+
+    <master auto="start"/>
+
+    <arg name="namespace"/>
+    <arg name="agent_number"/>
+    <arg name="octomap_resolution" value="0.05"/>
+    <param name="use_sim_time" value="true" />
+
+   
+
+    <!-- dwa planner  -->
+<!--
+ <node pkg="move_base" type="move_base" respawn="false" name="move_base_node" output="screen">
+
+    <param name="controller_frequency" value="50.0" />
+
+    <rosparam file="$(find robot_description)/param/dwa/rosbot$(arg agent_number)/costmap_common_params.yaml" command="load" ns="global_costmap" />
+    <rosparam file="$(find robot_description)/param/dwa/rosbot$(arg agent_number)/costmap_common_params.yaml" command="load" ns="local_costmap" />
+    <rosparam file="$(find robot_description)/param/dwa/local_costmap_params.yaml" command="load" />
+    <rosparam file="$(find robot_description)/param/dwa/global_costmap_params.yaml" command="load" />
+    <rosparam file="$(find robot_description)/param/dwa/trajectory_planner.yaml" command="load" />
+    <rosparam file="$(find robot_description)/param/dwa/base_local_planner_params.yaml" command="load" />
+    <rosparam file="$(find robot_description)/param/dwa/base_global_planner_params.yaml" command="load" />
+
+    <param name="max_planning_retries" value="-1"/>
+    <param name="recovery_behavior_enabled" value="true"/>
+    <rosparam file="$(find robot_description)/param/dwa/rosbot$(arg agent_number)/recovery_behaviors.yaml" command="load" />
+
+    <remap from="/move_base_simple/goal" to="move_base/goal"/>
+  </node>
+-->
+
+ <!--  ************** teb planner form teb_local_planner_tutorials  ***************  -->
+
+	<node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
+      <remap from="move_base/TebLocalPlannerROS/global_plan" to="move_base/global_plan"/>
+      <remap from="move_base/TebLocalPlannerROS/local_plan" to="move_base/local_plan"/>
+      <remap from="$(arg namespace)/odom" to="odom" />
+      <remap from="$(arg namespace)/scan" to="scan" />
+
+  	  <rosparam file="$(find robot_description)/param/cfg/diff_drive/drone$(arg agent_number)/costmap_common_params.yaml" command="load" ns="global_costmap" />
+  	 	<rosparam file="$(find robot_description)/param/cfg/diff_drive/drone$(arg agent_number)/costmap_common_params.yaml" command="load" ns="local_costmap" />
+  		<rosparam file="$(find robot_description)/param/cfg/diff_drive/drone$(arg agent_number)/local_costmap_params.yaml" command="load" />
+  		<rosparam file="$(find robot_description)/param/cfg/diff_drive/drone$(arg agent_number)/global_costmap_params.yaml" command="load" />
+  		<rosparam file="$(find robot_description)/param/cfg/diff_drive/drone$(arg agent_number)/teb_local_planner_params.yaml" command="load" />
+      
+		<param name="base_global_planner" value="global_planner/GlobalPlanner" />
+		<param name="planner_frequency" value="1.0" />
+		<param name="planner_patience" value="5.0" /> 
+
+		<param name="base_local_planner" value="teb_local_planner/TebLocalPlannerROS" />
+		<param name="controller_frequency" value="5.0" />
+		<param name="controller_patience" value="15.0" />
+    <param name="max_planning_retries" value="1"/>
+
+    <param name="recovery_behavior_enabled" value="false"/>
+    <rosparam file="$(find robot_description)/param/cfg/diff_drive/recovery_behaviors.yaml" command="load" />    
+    <remap from="/move_base_simple/goal" to="move_base/goal"/>
+
+	</node> 
+  
+</launch>

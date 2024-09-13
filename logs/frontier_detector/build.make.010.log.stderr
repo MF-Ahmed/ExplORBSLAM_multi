@@ -1,0 +1,7 @@
+/home/usr/data/ExplOrbSLAM_working/src/src/frontier_detector/src/map_merger.cpp: In member function ‘void MapMerger::mapCallback(const ConstPtr&, int)’:
+/home/usr/data/ExplOrbSLAM_working/src/src/frontier_detector/src/map_merger.cpp:43:9: error: expected ‘;’ before ‘}’ token
+   43 |         }
+      |         ^
+make[2]: *** [CMakeFiles/frontier_detector_mapMerger.dir/build.make:63: CMakeFiles/frontier_detector_mapMerger.dir/src/map_merger.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:1441: CMakeFiles/frontier_detector_mapMerger.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2

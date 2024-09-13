@@ -1,0 +1,25 @@
+<PlotJuggler>
+    <version>3.0</version>
+    <MainWindow>
+        <state></state>
+        <geometry></geometry>
+    </MainWindow>
+    <Plugins>
+        <Plugin name="ROS1" enabled="true">
+            <param name="node_name" value="plotjuggler"/>
+            <param name="topics">
+                <topic name="/robot_0/dopt-map/data"/>
+            </param>
+        </Plugin>
+    </Plugins>
+    <Plots>
+        <TimeSeries>
+            <Plot title="Dopt Map Data Plot" grid="true">
+                <Curves>
+                    <Curve topic="/robot_0/dopt-map/data" field="data" label="dopt_data"/>
+                </Curves>
+            </Plot>
+        </TimeSeries>
+    </Plots>
+</PlotJuggler>
+

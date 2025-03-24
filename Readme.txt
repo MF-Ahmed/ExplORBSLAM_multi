@@ -1,3 +1,10 @@
+Active Collaborative Visual SLAM Exploiting ORB Features
+This barnch impelents the work presentd in the paper 
+M. F. Ahmed, V. Frémont and I. Fantoni, "Active Collaborative Visual SLAM Exploiting ORB Features," 2024 18th International Conference on Control, Automation, 
+Robotics and Vision (ICARCV), Dubai, United Arab Emirates, 2024, pp. 966-971, doi: 10.1109/ICARCV63323.2024.10821699.
+Kindly cite accordingly 
+
+
 This implementation is working fine with multiple robots 
 1. Matrix regularizain is implemented.
 2. Path entropy is incorporated.

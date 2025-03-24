@@ -1,6 +1,6 @@
 # Active Collaborative Visual SLAM Exploiting ORB Features
 
-This branch implements the work presented in the paper:
+This branch implements the work presented in our paper:
 **M. F. Ahmed, V. Frémont, and I. Fantoni, "Active Collaborative Visual SLAM Exploiting ORB Features," 2024 18th International Conference on Control, Automation, Robotics and Vision (ICARCV), Dubai, United Arab Emirates, 2024, pp. 966-971, doi: 10.1109/ICARCV63323.2024.10821699.**
 
 Kindly cite this paper if you use this implementation.

@@ -15,6 +15,8 @@ The default working branch is set up for ROS Noetic and Ubuntu 20.04.
 
 ## Dependencies
 To install the necessary dependencies, run the following commands:
+
+### General Dependencies
 1. `pip install scipy==1.5.2`
 2. `pip install networkx==2.6.3`
 3. `pip install sophuspy==0.0.8`
@@ -22,5 +24,9 @@ To install the necessary dependencies, run the following commands:
 5. `pip install numba==0.57.1`
 6. `pip install numpy==1.21.1`
 
-## Usage
-Ensure you are using ROS Noetic and Ubuntu 20.04 for compatibility with this branch.
+### ORB-SLAM2 Dependencies
+1. Clone the ORB-SLAM2 repository and follow its installation instructions:
+   ```bash
+   git clone https://github.com/raulmur/ORB_SLAM2.git
+   cd ORB_SLAM2
+   ./build.sh

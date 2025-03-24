@@ -1,6 +1,7 @@
 # Active Collaborative Visual SLAM Exploiting ORB Features
 
-This branch implements the work presented in our paper:
+This branch implements the work presented in our paper cited below, in which we present an efficient visual AC-SLAM method using aerial and ground robots for environment exploration and mapping. We propose an efficient frontier filtering method that takes into account the common IoU map frontiers and reduces the frontiers for each robot. Additionally, we present an approach to guide robots to previously visited goal positions to promote loop closure and reduce SLAM uncertainty.
+
 **M. F. Ahmed, V. Frémont, and I. Fantoni, "Active Collaborative Visual SLAM Exploiting ORB Features," 2024 18th International Conference on Control, Automation, Robotics and Vision (ICARCV), Dubai, United Arab Emirates, 2024, pp. 966-971, doi: 10.1109/ICARCV63323.2024.10821699.**
 
 Kindly cite this paper if you use this implementation.

@@ -28,7 +28,8 @@ To install the necessary dependencies, run the following commands:
 9. 'sudo apt-get install ros-noetic-hector-gazebo '
 10. 'sudo apt-get install ros-noetic-hector-pose-estimation'
 11. 'sudo apt-get install ros-noetic-kobuki-msgs'
-12. 
+12. 'sudo apt-get install ros-noetic-map-server'
+13. 'sudo apt-get install ros-noetic-octomap-ros'
 
 ### ORB-SLAM2 Dependencies
 1. Clone the ORB-SLAM2 repository and follow its installation instructions:

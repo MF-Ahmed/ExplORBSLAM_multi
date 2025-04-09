@@ -23,6 +23,7 @@ To install the necessary dependencies, run the following commands:
 4. `pip install sophuspy==0.0.8`
 5. `pip install numba==0.57.1`
 6. `pip install numpy==1.21.1`
+7. 'sudo apt-get install ros-noetic-costmap-2d'
 
 ### ORB-SLAM2 Dependencies
 1. Clone the ORB-SLAM2 repository and follow its installation instructions:

@@ -24,6 +24,7 @@ To install the necessary dependencies, run the following commands:
 5. `pip install numba==0.57.1`
 6. `pip install numpy==1.21.1`
 7. 'sudo apt-get install ros-noetic-costmap-2d'
+8. 'sudo apt-get install ros-noetic-hector-gazebo-plugins '
 
 ### ORB-SLAM2 Dependencies
 1. Clone the ORB-SLAM2 repository and follow its installation instructions:

@@ -23,13 +23,14 @@ To install the necessary dependencies, run the following commands:
 4. `pip install sophuspy==0.0.8`
 5. `pip install numba==0.57.1`
 6. `pip install numpy==1.21.1`
-7. 'sudo apt-get install ros-noetic-costmap-2d'
-8. 'sudo apt-get install ros-noetic-hector-gazebo-plugins '
-9. 'sudo apt-get install ros-noetic-hector-gazebo '
-10. 'sudo apt-get install ros-noetic-hector-pose-estimation'
-11. 'sudo apt-get install ros-noetic-kobuki-msgs'
-12. 'sudo apt-get install ros-noetic-map-server'
-13. 'sudo apt-get install ros-noetic-octomap-ros'
+7. `sudo apt-get install ros-noetic-costmap-2d`
+8. `sudo apt-get install ros-noetic-hector-gazebo-plugins`
+9. `sudo apt-get install ros-noetic-hector-gazebo`
+10. `sudo apt-get install ros-noetic-hector-pose-estimation`
+11. `sudo apt-get install ros-noetic-kobuki-msgs`
+12. `sudo apt-get install ros-noetic-map-server`
+13. `sudo apt-get install ros-noetic-octomap-ros`
+14. `sudo apt-get install ros-noetic-tf2-sensor-msgs`
 
 ### ORB-SLAM2 Dependencies
 1. Clone the ORB-SLAM2 repository and follow its installation instructions:

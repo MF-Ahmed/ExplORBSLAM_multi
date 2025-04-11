@@ -24,7 +24,8 @@ To install the necessary dependencies, run the following commands:
 5. `pip install numba==0.57.1`
 6. `pip install numpy==1.21.1`
 
-### ROS Specific Dependencies   
+### ROS Specific Dependencies 
+``` bash
 1. `sudo apt-get install ros-noetic-costmap-2d`
 2. `sudo apt-get install ros-noetic-hector-gazebo-plugins`
 3. `sudo apt-get install ros-noetic-hector-gazebo`
@@ -36,6 +37,8 @@ To install the necessary dependencies, run the following commands:
 9. `sudo apt-get install ros-noetic-move-base-msgs`
 10. `sudo apt-get install ros-noetic-turtlebot3-teleop`
 11. `sudo apt-get install ros-noetic-octomap-rviz-plugins`
+12. `sudo apt-get install ros-noetic-teb-local-planner  `
+13. sudo apt-get install ros-noetic-navigation
 
 ### ORB-SLAM2 Dependencies
 1. Clone the ORB-SLAM2 repository and follow its installation instructions:

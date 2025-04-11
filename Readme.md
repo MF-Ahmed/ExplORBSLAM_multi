@@ -24,6 +24,8 @@ To install the necessary dependencies, run the following commands:
    pip install sophuspy==0.0.8
    pip install numba==0.57.1
    pip install numpy==1.21.1
+   pip install nptyping
+   pip install scikit-learn
    ```
 ### ROS Specific Dependencies 
 ``` bash

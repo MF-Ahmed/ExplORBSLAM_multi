@@ -17,14 +17,14 @@ This branch is set up for ROS Noetic and Ubuntu 20.04.
 To install the necessary dependencies, run the following commands:
 
 ### General Dependencies
-``` bash
+```bash
    pip install scipy==1.5.2
    pip install networkx==2.6.3
    sudo apt-get install python3-pybind11
    pip install sophuspy==0.0.8
    pip install numba==0.57.1
    pip install numpy==1.21.1
-
+   ```
 ### ROS Specific Dependencies 
 ``` bash
    sudo apt-get install ros-noetic-costmap-2d
@@ -40,7 +40,7 @@ To install the necessary dependencies, run the following commands:
    sudo apt-get install ros-noetic-octomap-rviz-plugins
    sudo apt-get install ros-noetic-teb-local-planner
    sudo apt-get install ros-noetic-navigation
-
+```
 ### ORB-SLAM2 Dependencies
 1. Clone the ORB-SLAM2 repository and follow its installation instructions:
    ```bash

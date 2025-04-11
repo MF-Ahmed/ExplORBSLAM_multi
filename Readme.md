@@ -11,7 +11,7 @@ This implementation works with multiple robots and includes:
 1. Matrix regularization.
 2. Path entropy incorporation.
 
-This branch is set up for ROS Noetic and Ubuntu 20.04.
+This branch is set up for **ROS Noetic** and **Ubuntu 20.04**.
 
 ## Dependencies
 To install the necessary dependencies, run the following commands:

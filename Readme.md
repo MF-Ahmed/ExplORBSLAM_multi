@@ -17,28 +17,29 @@ This branch is set up for ROS Noetic and Ubuntu 20.04.
 To install the necessary dependencies, run the following commands:
 
 ### General Dependencies
-1. `pip install scipy==1.5.2`
-2. `pip install networkx==2.6.3`
-3. `sudo apt-get install python3-pybind11`
-4. `pip install sophuspy==0.0.8`
-5. `pip install numba==0.57.1`
-6. `pip install numpy==1.21.1`
+``` bash
+   pip install scipy==1.5.2
+   pip install networkx==2.6.3
+   sudo apt-get install python3-pybind11
+   pip install sophuspy==0.0.8
+   pip install numba==0.57.1
+   pip install numpy==1.21.1
 
 ### ROS Specific Dependencies 
 ``` bash
-1. `sudo apt-get install ros-noetic-costmap-2d`
-2. `sudo apt-get install ros-noetic-hector-gazebo-plugins`
-3. `sudo apt-get install ros-noetic-hector-gazebo`
-4. `sudo apt-get install ros-noetic-hector-pose-estimation`
-5. `sudo apt-get install ros-noetic-kobuki-msgs`
-6. `sudo apt-get install ros-noetic-map-server`
-7. `sudo apt-get install ros-noetic-octomap-ros`
-8. `sudo apt-get install ros-noetic-tf2-sensor-msgs`
-9. `sudo apt-get install ros-noetic-move-base-msgs`
-10. `sudo apt-get install ros-noetic-turtlebot3-teleop`
-11. `sudo apt-get install ros-noetic-octomap-rviz-plugins`
-12. `sudo apt-get install ros-noetic-teb-local-planner  `
-13. sudo apt-get install ros-noetic-navigation
+   sudo apt-get install ros-noetic-costmap-2d
+   sudo apt-get install ros-noetic-hector-gazebo-plugins
+   sudo apt-get install ros-noetic-hector-gazebo
+   sudo apt-get install ros-noetic-hector-pose-estimation
+   sudo apt-get install ros-noetic-kobuki-msgs
+   sudo apt-get install ros-noetic-map-server
+   sudo apt-get install ros-noetic-octomap-ros
+   sudo apt-get install ros-noetic-tf2-sensor-msgs
+   sudo apt-get install ros-noetic-move-base-msgs
+   sudo apt-get install ros-noetic-turtlebot3-teleop
+   sudo apt-get install ros-noetic-octomap-rviz-plugins
+   sudo apt-get install ros-noetic-teb-local-planner
+   sudo apt-get install ros-noetic-navigation
 
 ### ORB-SLAM2 Dependencies
 1. Clone the ORB-SLAM2 repository and follow its installation instructions:

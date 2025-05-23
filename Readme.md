@@ -10,7 +10,7 @@ Kindly cite this paper if you use this implementation.
 This implementation works with multiple robots and includes:
 1. Matrix regularization.
 2. Path entropy incorporation.
-
+[![Watch the video](https://img.youtube.com/vi/6j3VBdnVcO8/maxresdefault.jpg)](https://www.youtube.com/watch?v=6j3VBdnVcO8)
 This branch is set up for **ROS Noetic** and **Ubuntu 20.04**.
 
 ## Dependencies

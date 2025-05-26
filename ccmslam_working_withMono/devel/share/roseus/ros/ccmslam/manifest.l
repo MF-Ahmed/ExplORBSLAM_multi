@@ -1,1 +1,0 @@
-/home/usr/data/ccmslam_ws/devel/.private/ccmslam/share/roseus/ros/ccmslam/manifest.l

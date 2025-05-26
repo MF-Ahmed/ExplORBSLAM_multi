@@ -1,1 +1,0 @@
-/home/usr/data/ccmslam_ws/devel/.private/ccmslam/share/gennodejs/ros/ccmslam/srv/ServiceSaveMap.js

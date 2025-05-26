@@ -1,1 +1,7 @@
-/home/usr/data/ExplOrbSLAM_working/devel/.private/graph_d_exploration/share/graph_d_exploration/docs/informationGainConfig-usage.dox
+\subsubsection usage Usage
+\verbatim
+<node name="graph_d_exploration" pkg="graph_d_exploration" type="graph_d_exploration">
+  <param name="ig_threshold" type="double" value="0.45" />
+</node>
+\endverbatim
+

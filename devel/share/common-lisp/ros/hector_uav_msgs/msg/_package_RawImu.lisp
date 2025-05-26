@@ -1,1 +1,8 @@
-/home/usr/data/ExplOrbSLAM_working/devel/.private/hector_uav_msgs/share/common-lisp/ros/hector_uav_msgs/msg/_package_RawImu.lisp
+(cl:in-package hector_uav_msgs-msg)
+(cl:export '(HEADER-VAL
+          HEADER
+          ANGULAR_VELOCITY-VAL
+          ANGULAR_VELOCITY
+          LINEAR_ACCELERATION-VAL
+          LINEAR_ACCELERATION
+))

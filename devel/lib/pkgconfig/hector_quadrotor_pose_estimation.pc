@@ -1,1 +1,8 @@
-/home/usr/data/ExplOrbSLAM_working/devel/.private/hector_quadrotor_pose_estimation/lib/pkgconfig/hector_quadrotor_pose_estimation.pc
+prefix=/home/farhan/data/ExplOrbSLAM_ws/devel
+
+Name: hector_quadrotor_pose_estimation
+Description: Description of hector_quadrotor_pose_estimation
+Version: 0.3.5
+Cflags: -I/home/farhan/data/ExplOrbSLAM_ws/src/hector_quadrotor/hector_quadrotor_pose_estimation/include
+Libs: -L${prefix}/lib -lquadrotor_pose_estimation_nodelet -lquadrotor_pose_estimation_node
+Requires: hector_pose_estimation hector_uav_msgs

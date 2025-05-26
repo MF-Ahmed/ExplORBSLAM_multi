@@ -36,15 +36,12 @@
         <param name="/target_frame_id"      value="$(arg robot_frame)"/>
         <param name="/pointcloud_frame_id"  value="$(arg global_frame)"/>
         <param name="/octomap/rebuild"      value="false"/>
-        <param name="/max_height"           value="10.0"/>  <!-- 5.0     for house --> 
-        <param name="/min_height"           value="0.3"/>  <!--  0.0  for house -->
+        <param name="/max_height"           value="5.0"/>
+        <param name="/min_height"           value="0.0"/>
 
         <param name="namespace"             value="$(arg robot_namespace)"/>
     </node>
 
-
-
-   
     <node pkg="frontier_detector" type="frontier_detector_gridmapper" name="gridmapper" output="screen" required="true">
         <remap from="/gba_running" to="orb_slam2_$(arg camera_type)/gba_running" />
 
@@ -53,14 +50,13 @@
         <param name="/occupancy/publish_occupancy_grid_rect"    value="true" />
         <param name="/target_frame_id"      value="$(arg robot_frame)"/>
         <param name="/pointcloud_frame_id"  value="$(arg global_frame)"/>
-        <param name="/occupancy/projected_map/min_height" value="0.3"/> <!--  0.3 for house  -->
-        <param name="/occupancy/projected_map/max_height" value="10"/>  <!--   5 for house  -->
+        <param name="/occupancy/projected_map/min_height" value="0.3"/>
+        <param name="/occupancy/projected_map/max_height" value="5"/>
         <param name="namespace"             value="$(arg robot_namespace)"/>
 
         <remap from="/octomapper/octomap" to="octomapper/octomap"/>
         <remap from="/$(arg robot_namespace)/gridmapper/map" to="/$(arg robot_namespace)/map"/>
     </node>
-   
 
 
     <!--

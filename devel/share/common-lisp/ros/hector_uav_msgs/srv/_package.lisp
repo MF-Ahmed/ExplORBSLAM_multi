@@ -1,1 +1,10 @@
-/home/usr/data/ExplOrbSLAM_working/devel/.private/hector_uav_msgs/share/common-lisp/ros/hector_uav_msgs/srv/_package.lisp
+(cl:defpackage hector_uav_msgs-srv
+  (:use )
+  (:export
+   "ENABLEMOTORS"
+   "<ENABLEMOTORS-REQUEST>"
+   "ENABLEMOTORS-REQUEST"
+   "<ENABLEMOTORS-RESPONSE>"
+   "ENABLEMOTORS-RESPONSE"
+  ))
+

@@ -1,1 +1,8 @@
-/home/usr/data/ExplOrbSLAM_working/devel/.private/plotting/lib/pkgconfig/plotting.pc
+prefix=/home/farhan/data/ExplOrbSLAM_ws/devel
+
+Name: plotting
+Description: Description of plotting
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

@@ -50,8 +50,7 @@ class WeightedPoseGraph:
         self.th_plan_points = rospy.get_param('~hallucinated_plan_th', 50)
         self.graph = nx.Graph()
         self.criteria = criteria        
-        self.opt_total2=0
-
+        opt_total2=0
         if (nodes is not None) and (edges is not None):
             for i in range(0, np.size(nodes, 0)):
                 p = nodes[i][1]  # array of pose
@@ -62,53 +61,30 @@ class WeightedPoseGraph:
                 edge_type = 0 if abs(edges[i][0] - edges[i][1]) == 1 else 1
                 FIM = edges[i][2]
                 A = FIM
-                
-                try: 
-                    #rospy.loginfo(self.namespace + " Original A: {}".format(A))
-                    A = np.nan_to_num(A, nan=np.nanmax(A), posinf=np.nanmax(A), neginf=-np.nanmax(A))
-                    #rospy.loginfo(self.namespace + " Sanitized A: {}".format(A))
-                    eigv2, _ = np.linalg.eig(A)
-                    eigv = eigv2[eigv2 > 1e-8]
-                    n = np.size(A, 1)
-                    #rospy.loginfo(self.namespace+f" n is {n}")
-                except Exception as e: 
-                    rospy.logwarn(self.namespace + " Exception: {}".format(e))
-
+                A = np.nan_to_num(A, nan=np.nanmax(A), posinf=np.nanmax(A), neginf=-np.nanmax(A))
+                eigv2, _ = np.linalg.eig(A)
+                eigv = eigv2[eigv2 > 1e-8]
+                n = np.size(A, 1)
                 if criteria == 'd_opt':
-                    try:
-                        if n > 0 and eigv.size > 0:
-                            opt_cri = np.exp(np.sum(np.log(eigv)) / n)
-                            self.graph.add_edge(*edge, type=edge_type, information=FIM, weight=opt_cri)
-                            self.opt_total2 += opt_cri
-                            #rospy.loginfo(self.namespace + f" Valid eigenvalues = {eigv} of size = {eigv.size} or dimension = {n},  Adding edge = {i}.")
-                        else:   
-                            pass                         
-                            #rospy.loginfo(self.namespace + f" Invalid eigenvalues = {eigv} of size = {eigv.size} or dimension = {n}, skipping edge = {i}.")
-                    except ZeroDivisionError as e:                        
-                        rospy.logwarn(self.namespace + " Exception: {}".format(e))
-
                     opt_cri = np.exp(np.sum(np.log(eigv)) / n)
                     self.graph.add_edge(*edge, type=edge_type, information=FIM, weight=opt_cri)
-                    self.opt_total2 = self.opt_total2 + opt_cri  
+                    opt_total2 = opt_total2 + opt_cri  
                 else:
-                    rospy.logwarn(self.namespace+" WeightedPoseGraph : Optimality criteria not recognized.")
-            try: 
-                if np.size(edges, 0) > 0:           
-                    self.opt_total2 = self.opt_total2 / np.size(edges, 0)
-                else:
-                    rospy.loginfo(self.namespace + " No edges to process for optimality calculation.")  
-           
-            except Exception as e:
-                rospy.logwarn(self.namespace + " Exception during opt_total2 calculation: {}".format(e))
+                    rospy.loginfo("/WeightedPoseGraph : Optimality criteria not recognized.")
+            try:
+            
+                rospy.loginfo(self.namespace+"!!!!!!  WeightedPoseGraph Class: The D opyimality of each edge in graph = {}".format(opt_total2/np.size(edges, 0))) # Farhan  
+            except:
+                rospy.loginfo(self.namespace+"!!!!!! Division by Zero" ) # Farhan     
 
         elif nodes is not None:
-            rospy.loginfo(self.namespace+ " !  WeightedPoseGraph Class: Edges initialized to None. !")
+            rospy.loginfo("!!!!!!!!!!!  WeightedPoseGraph Class: Edges initialized to None. !!!!!!!!!!!!!!")
             for i in range(0, np.size(nodes, 0)):
                 p = nodes[i][1]
                 q = nodes[i][2]
                 self.graph.add_node(nodes[i][0], translation=p, orientation=q)  # qx, qy, qz, qw
         elif edges is not None:
-            rospy.loginfo(self.namespace+ " ! WeightedPoseGraph Class: Nodes initialized to None. !")
+            rospy.loginfo("!!!!!!!!!!! WeightedPoseGraph Class: Nodes initialized to None. !!!!!!!!!!!!!!")
             opt_total2 = 0
             for i in range(0, np.size(edges, 0)):
                 edge = (edges[i][0], edges[i][1])
@@ -126,19 +102,12 @@ class WeightedPoseGraph:
                 n = np.size(A, 1)           
                 
                 if criteria == 'd_opt':
-                    opt_cri = np.exp(np.sum(np.log(eigv)) / n)    
+                    opt_cri = np.exp(np.sum(np.log(eigv)) / n)
+                   
+                    
                     self.graph.add_edge(*edge, type=edge_type, information=FIM, weight=opt_cri)
-                    self.opt_total2 = self.opt_total2 + opt_cri  
                 else:
                     rospy.loginfo("WeightedPoseGraph Class: Optimality criteria not recognized.")
-
-                try:            
-                    #rospy.loginfo(self.namespace+" WeightedPoseGraph Class: The D opyimality of each edge in graph = {}".format(opt_total2/np.size(edges, 0))) # Farhan  
-                    self.opt_total2 = self.opt_total2/np.size(edges, 0)
-
-                except:
-                    rospy.loginfo(self.namespace+ f"edges are = {np.size(edges, 0)}" ) # Farhan   
-                    rospy.loginfo(self.namespace+"!!!!!! Division by Zero !!!!" ) # Farhan         
                 
 
     def addEdge(self, id1: int, id2: int, FIM: ndarray):
@@ -172,11 +141,6 @@ class WeightedPoseGraph:
         :rtype: scipy sparse matrix csr
         """
         return nx.adjacency_matrix(self.graph, nodelist=None, weight='weight')
-
-    def get_opti_total(self):
-        return self.opt_total2
-
-
 
     def computeL(self):
         """

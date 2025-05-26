@@ -1,1 +1,4 @@
-/home/usr/data/ExplOrbSLAM_working/devel/.private/frontier_detector/share/frontier_detector/cmake/frontier_detector-msg-paths.cmake
+# generated from genmsg/cmake/pkg-msg-paths.cmake.develspace.in
+
+set(frontier_detector_MSG_INCLUDE_DIRS "/home/farhan/data/ExplOrbSLAM_ws/src/src/frontier_detector/msg")
+set(frontier_detector_MSG_DEPENDENCIES std_msgs;geometry_msgs)

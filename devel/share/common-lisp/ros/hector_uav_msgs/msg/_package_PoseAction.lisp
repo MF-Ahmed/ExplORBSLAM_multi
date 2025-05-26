@@ -1,1 +1,8 @@
-/home/usr/data/ExplOrbSLAM_working/devel/.private/hector_uav_msgs/share/common-lisp/ros/hector_uav_msgs/msg/_package_PoseAction.lisp
+(cl:in-package hector_uav_msgs-msg)
+(cl:export '(ACTION_GOAL-VAL
+          ACTION_GOAL
+          ACTION_RESULT-VAL
+          ACTION_RESULT
+          ACTION_FEEDBACK-VAL
+          ACTION_FEEDBACK
+))

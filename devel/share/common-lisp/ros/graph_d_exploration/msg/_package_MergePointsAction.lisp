@@ -1,1 +1,8 @@
-/home/usr/data/ExplOrbSLAM_working/devel/.private/graph_d_exploration/share/common-lisp/ros/graph_d_exploration/msg/_package_MergePointsAction.lisp
+(cl:in-package graph_d_exploration-msg)
+(cl:export '(ACTION_GOAL-VAL
+          ACTION_GOAL
+          ACTION_RESULT-VAL
+          ACTION_RESULT
+          ACTION_FEEDBACK-VAL
+          ACTION_FEEDBACK
+))

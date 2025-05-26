@@ -1,1 +1,10 @@
-/home/usr/data/ExplOrbSLAM_working/devel/.private/hector_uav_msgs/share/common-lisp/ros/hector_uav_msgs/msg/_package_Altimeter.lisp
+(cl:in-package hector_uav_msgs-msg)
+(cl:export '(HEADER-VAL
+          HEADER
+          ALTITUDE-VAL
+          ALTITUDE
+          PRESSURE-VAL
+          PRESSURE
+          QNH-VAL
+          QNH
+))

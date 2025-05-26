@@ -4,5 +4,5 @@ PROJECT_PKG_CONFIG_INCLUDE_DIRS = "".split(';') if "" != "" else []
 PROJECT_CATKIN_DEPENDS = "".replace(';', ' ')
 PKG_CONFIG_LIBRARIES_WITH_PREFIX = "".split(';') if "" != "" else []
 PROJECT_NAME = "hector_moveit"
-PROJECT_SPACE_DIR = "/home/usr/data/ExplOrbSLAM_working/devel/.private/hector_moveit"
+PROJECT_SPACE_DIR = "/home/farhan/data/ExplOrbSLAM_ws/devel"
 PROJECT_VERSION = "0.3.0"

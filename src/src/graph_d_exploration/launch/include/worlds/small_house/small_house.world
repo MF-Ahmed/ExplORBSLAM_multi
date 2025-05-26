@@ -49,14 +49,12 @@
         </include>
         <pose frame=''>-2.004656 -5.226610 0.003485 0 -0 0</pose>
 	</model>
-
-
 	<model name='Ball_01_001'>
         <static>true</static>
         <include>
             <uri>model://aws_robomaker_residential_Ball_01</uri>
         </include>
-        <pose frame=''>3.295503 -3.225674 0.318684 0 -0 0</pose>
+        <pose frame=''>3.295503 4.225674 0.318684 0 -0 0</pose>
 	</model>
 
     <!-- quick test ball for turtlebot3 -->
@@ -75,7 +73,7 @@
         <include>
             <uri>model://aws_robomaker_residential_Ball_01</uri>
         </include>
-        <pose frame=''>-6.945503 -2.9 0.318684 0 -0 0</pose>
+        <pose frame=''>-6.945503 -4.22174 0.318684 0 -0 0</pose>
 	</model>
 	<model name='Bed_01_001'>
         <static>true</static>
@@ -115,7 +113,7 @@
         <pose frame=''>0 0 2.5 0 -0 0</pose>
 	</model>
     -->
-   <!--
+
 	<model name='ChairA_01_001'>
         <static>true</static>
         <include>
@@ -172,8 +170,6 @@
         </include>
         <pose frame=''>-8.270775 -4.504456 0 0 -0 3.8</pose>
 	</model>
-
-    -->
 	<model name='Chandelier_01_001'>
         <static>true</static>
         <include>
@@ -290,7 +286,6 @@
         </include>
         <pose frame=''>1.572830 -1.775857 0.401790 -0.020625 -0.000080 -0.006317</pose>
 	</model>
-    <!--
 	<model name='FitnessEquipment_01_001'>
         <static>true</static>
         <include>
@@ -298,7 +293,6 @@
         </include>
         <pose frame=''>3.484720 3.169104 0.003168 0 -0 0</pose>
 	</model>
-    -->
 	<model name='FoldingDoor_01_001'>
         <static>true</static>
         <include>
@@ -595,16 +589,6 @@
         </include>
         <pose frame=''>0.330699 -1.902792 0.065992 0.000000 0.000000 1.571733</pose>
 	</model>
-
-	<model name='SofaC_01_002'>
-        <static>true</static>
-        <include>
-            <uri>model://aws_robomaker_residential_SofaC_01</uri>
-        </include>
-        <pose frame=''>3.3 4.2 0.065992 0.000000 0.000000 -1.571733</pose>
-	</model>
-
-
 	<model name='Tableware_01_001'>
         <static>true</static>
         <include>
@@ -617,7 +601,7 @@
         <include>
             <uri>model://aws_robomaker_residential_Trash_01</uri>
         </include>
-        <pose frame=''>2.360151 -0.296238 0.011 0 -0 0</pose>
+        <pose frame=''>2.360151 -0.796238 0.011 0 -0 0</pose>
 	</model>
     <model name='Trash_01_002'>
         <static>true</static>

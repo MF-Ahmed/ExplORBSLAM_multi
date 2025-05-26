@@ -63,7 +63,8 @@ class Map:
 
         # Calibration values
         camera_info_topic = rospy.get_param('/decision_maker/cameraInfo_topic','/'+ _namespace_+'/camera/rgb/camera_info')
-        camera_info = rospy.wait_for_message(camera_info_topic, CameraInfo, timeout=5)
+        #camera_info = rospy.wait_for_message(camera_info_topic, CameraInfo, timeout=5)
+        camera_info = rospy.wait_for_message(camera_info_topic, CameraInfo, timeout=50)
 
         # Intrinsic camera matrix for the raw (distorted) images.
         #     [fx  0 cx]
@@ -177,6 +178,7 @@ class Map:
         Sets map points, saving all points with their R^3 pose and covisible KFs, from information from ORB-SLAM in
          the following form: Id, pose in R^3 (x,y,z), FIM (in R^6)
         """
+
         for data in mps:
             mpId = int(data[0])
             p3Dw = np.array([float(data[1]), float(data[2]), float(data[3])])
@@ -200,6 +202,7 @@ class Map:
         Returns list of nodes[node, pose[x,y,z,qx,qy,qz,qw]]
         :return: list of nodes
         """
+
         nodes = []
         for i in range(1, self.nKFs + 1):  # Not including KF 0
             i_dict = int(i)

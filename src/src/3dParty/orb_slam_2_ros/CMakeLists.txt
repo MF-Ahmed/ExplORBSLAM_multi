@@ -5,13 +5,13 @@ IF(NOT CMAKE_BUILD_TYPE)
   SET(CMAKE_BUILD_TYPE Release)
 ENDIF()
 
-# Check for c++11 support
+# Check for c++17 support
 INCLUDE(CheckCXXCompilerFlag)
-CHECK_CXX_COMPILER_FLAG("-std=c++11" COMPILER_SUPPORTS_CXX11)
+CHECK_CXX_COMPILER_FLAG("-std=c++17" COMPILER_SUPPORTS_CXX11)
 IF(COMPILER_SUPPORTS_CXX11)
-  set(CMAKE_CXX_FLAGS "-std=c++11 ${CMAKE_CXX_FLAGS}")
+  set(CMAKE_CXX_FLAGS "-std=c++17 ${CMAKE_CXX_FLAGS}")
 ELSE()
-  MESSAGE(ERROR "The compiler ${CMAKE_CXX_COMPILER} has no C++11 support. Please use a different C++ compiler.")
+  MESSAGE(ERROR "The compiler ${CMAKE_CXX_COMPILER} has no C++17 support. Please use a different C++ compiler.")
 ENDIF()
 
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS}  -O3")
@@ -68,9 +68,9 @@ set(LIBS_ROS    ${PROJECT_SOURCE_DIR}/orb_slam2/lib/lib${PROJECT_NAME}.so
 add_service_files(FILES SaveMap.srv)
 
 # Generate messages in the 'msg' folder
-add_message_files(FILES ORBState.msg)
+add_message_files(FILES ORBState.msg PoseGraphKeyFrame.msg)
 
-generate_messages(DEPENDENCIES  std_msgs)
+generate_messages(DEPENDENCIES  std_msgs geometry_msgs)
 
 catkin_package (CATKIN_DEPENDS  roscpp
                                 rospy
@@ -81,7 +81,8 @@ catkin_package (CATKIN_DEPENDS  roscpp
                                 tf_conversions
                                 sensor_msgs
                                 dynamic_reconfigure
-                                message_runtime)
+                                message_runtime
+                                geometry_msgs)
 #                LIBRARIES       ${PROJECT_NAME}
 #                                libDBoW2
 #                                libg2o)
@@ -118,7 +119,9 @@ add_library(${PROJECT_NAME} SHARED  orb_slam2/src/System.cc
                                     orb_slam2/src/Sim3Solver.cc
                                     orb_slam2/src/Initializer.cc
                                     orb_slam2/src/HessianComputation.cc
-                                    orb_slam2/src/PinHole.cc)
+                                    orb_slam2/src/PinHole.cc
+                                    orb_slam2/src/PoseGraphPublisher.cpp
+                                    orb_slam2/src/PoseGraphReceiver.cpp)
 
 add_dependencies (${PROJECT_NAME}   g2o
                                     DBoW2)

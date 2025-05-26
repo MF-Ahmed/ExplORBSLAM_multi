@@ -1,1 +1,14 @@
-/home/usr/data/ExplOrbSLAM_working/devel/.private/hector_moveit_gazebo_worlds/share/hector_moveit_gazebo_worlds/cmake/hector_moveit_gazebo_worldsConfig-version.cmake
+# generated from catkin/cmake/template/pkgConfig-version.cmake.in
+set(PACKAGE_VERSION "1.0.0")
+
+set(PACKAGE_VERSION_EXACT False)
+set(PACKAGE_VERSION_COMPATIBLE False)
+
+if("${PACKAGE_FIND_VERSION}" VERSION_EQUAL "${PACKAGE_VERSION}")
+  set(PACKAGE_VERSION_EXACT True)
+  set(PACKAGE_VERSION_COMPATIBLE True)
+endif()
+
+if("${PACKAGE_FIND_VERSION}" VERSION_LESS "${PACKAGE_VERSION}")
+  set(PACKAGE_VERSION_COMPATIBLE True)
+endif()

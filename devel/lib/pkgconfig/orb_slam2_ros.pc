@@ -1,1 +1,8 @@
-/home/usr/data/ExplOrbSLAM_working/devel/.private/orb_slam2_ros/lib/pkgconfig/orb_slam2_ros.pc
+prefix=/home/farhan/data/ExplOrbSLAM_ws/devel
+
+Name: orb_slam2_ros
+Description: Description of orb_slam2_ros
+Version: 0.0.1
+Cflags: -I/home/farhan/data/ExplOrbSLAM_ws/devel/include
+Libs: -L${prefix}/lib 
+Requires: roscpp rospy std_msgs cv_bridge image_transport tf tf_conversions sensor_msgs dynamic_reconfigure message_runtime geometry_msgs

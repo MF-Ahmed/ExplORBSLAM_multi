@@ -1,1 +1,0 @@
-/home/usr/data/ExplOrbSLAM_working/devel/.private/nav_core/lib/pkgconfig/nav_core.pc

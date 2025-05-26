@@ -12,14 +12,11 @@ import actionlib
 import numpy as np
 
 from graph_d_exploration.msg import Point2D, ChooseGoalResult, ChooseGoalFeedback, ChooseGoalAction
-from constants import INTER_GOAL_DIST
 
 # Initialize list to store chosen coordinates
 # Keeping track of the chosen points, which means that they could have not been used
-# but they have been published so potentially used   
+# but they hvae been published so potentially used   
 chosen_coords = []
-
-chosen_coords_with_info = []
 
 # Greedy approach
 class ChoosePointsServer:
@@ -36,7 +33,7 @@ class ChoosePointsServer:
         rospy.loginfo(f'{self.ServerName_} Server started')
 
     def execute_callback(self, goal):
-        #rospy.loginfo(f'{self.ServerName_} Received lists points from client {goal.client_id}')
+        rospy.loginfo(f'{self.ServerName_} Received lists points from client {goal.client_id}')
 
         result = ChooseGoalResult()
         # Take the result and cast it with the type chosen in the msg
@@ -53,16 +50,18 @@ class ChoosePointsServer:
             self.server.set_aborted()
 
     def select_points(self, matrix_, num_rows):
-        #rospy.loginfo(f"{self.ServerName_} chosen_coords before assignment : {chosen_coords}")
 
-        #rospy.loginfo(f"{self.ServerName_} Select point got Matix = {matrix_}")
-        #rospy.loginfo(f"{self.ServerName_} Select point got num_rows = {num_rows}")
+        rospy.loginfo(f"{self.ServerName_} Select point got Matix = {matrix_}")
+        rospy.loginfo(f"{self.ServerName_} Select point got num_rows = {num_rows}")
+
+        # Feedback message
+        rospy.loginfo(f"{self.ServerName_} matrix before reshaping is  = {matrix_}")
         feedback_msg = ChooseGoalFeedback()
         # Array to pass the goal
         _goal_arr_ = []
         # Reshape the matrix
         matrix = np.array(matrix_).reshape(np.sum(num_rows), 3)
-
+        rospy.loginfo(f"{self.ServerName_} matrix after reshaping is  = {matrix}")
         
         if matrix[:, 0] != []:
             # Point for the goal
@@ -70,10 +69,9 @@ class ChoosePointsServer:
 
             # TODO update the reward if the chosen goal array has already come goals inside
             if chosen_coords != []:
-                #rospy.loginfo(f"{self.ServerName_} Updating the reward for the next goals according to the already chosen ones ... ")
+                rospy.loginfo(f"{self.ServerName_} Updating the reward for the next goals according to the already chosen ones ... ")
                 matrix = self.update_rewards(chosen_coords, matrix)
-                pass
-            
+
             # Get indices of maximum reward in submatrix
             max_reward_idx = np.argmax(matrix[:, 0])
 
@@ -92,8 +90,6 @@ class ChoosePointsServer:
 
             # Store chosen coordinates as an array
             chosen_coords.append(p)
-            
-            rospy.loginfo(f"{self.ServerName_} chosen_coords after assignment : {chosen_coords}")
 
             # Array to pass the goal
             _goal_arr_ = [p]
@@ -124,9 +120,8 @@ class ChoosePointsServer:
             for g in range(len(matrix)):
                 # Check that the point is not already present in the choosing coordinate.
                 # If so then set to -inf
-                d1 = pow(chosen_coords[c].x-matrix[g,1],2)+pow(chosen_coords[c].y-matrix[g,2],2)
-                if (chosen_coords[c].x == matrix[g,1] and chosen_coords[c].y == matrix[g,2]) or (d1<INTER_GOAL_DIST):
-                    #rospy.logwarn(f"Point [{str(matrix[g, 1])},{str(matrix[g, 2])}] already chosen or too close with distance of :{d1} from setvalue of {INTER_GOAL_DIST}. Reward set to -inf")
+                if chosen_coords[c].x == matrix[g,1] and chosen_coords[c].y == matrix[g,2]:
+                    rospy.logwarn(f"Point [{str(matrix[g, 1])},{str(matrix[g, 2])}] already chosen. Reward set to -inf")
                     matrix[g,0] = -np.inf
                 # Check that the reward is not -inf
                 if matrix[g,0] != -np.inf:
@@ -139,28 +134,6 @@ class ChoosePointsServer:
                         matrix[g,0] = -np.inf
 
         return matrix
-    
-
-
-    def chosen_coords_and_info(self, x, y, text):
-        return {'point': (x, y), 'info': text}
-
-def initialize_points(self):
-    global chosen_coords_with_info
-    chosen_coords_with_info = [
-        self.chosen_coords_and_info(1.0, 2.0, 'Point 1'),
-        self.chosen_coords_and_info(3.0, 4.0, 'Point 2'),
-        self.chosen_coords_and_info(5.0, 6.0, 'Point 3')
-    ]
-
-
-
-# Define the array of 2D points with text info
-points_with_text = [
-    {'point': (x, y), 'info': text}
-    for x, y, text in [(1.0, 2.0, 'Point 1'), (3.0, 4.0, 'Point 2'), (5.0, 6.0, 'Point 3')]
-]
-
 
 if __name__ == '__main__':
     rospy.init_node('choose_points_server')

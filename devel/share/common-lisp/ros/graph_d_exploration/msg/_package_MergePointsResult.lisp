@@ -1,1 +1,6 @@
-/home/usr/data/ExplOrbSLAM_working/devel/.private/graph_d_exploration/share/common-lisp/ros/graph_d_exploration/msg/_package_MergePointsResult.lisp
+(cl:in-package graph_d_exploration-msg)
+(cl:export '(MERGED_POINTS-VAL
+          MERGED_POINTS
+          RADIUS_USED-VAL
+          RADIUS_USED
+))

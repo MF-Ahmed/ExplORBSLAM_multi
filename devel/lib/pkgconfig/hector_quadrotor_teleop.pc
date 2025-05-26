@@ -1,1 +1,8 @@
-/home/usr/data/ExplOrbSLAM_working/devel/.private/hector_quadrotor_teleop/lib/pkgconfig/hector_quadrotor_teleop.pc
+prefix=/home/farhan/data/ExplOrbSLAM_ws/devel
+
+Name: hector_quadrotor_teleop
+Description: Description of hector_quadrotor_teleop
+Version: 0.3.5
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: roscpp sensor_msgs geometry_msgs hector_uav_msgs

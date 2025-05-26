@@ -30,7 +30,6 @@ from visualization_msgs.msg import Marker
 from nav_msgs.msg import OccupancyGrid
 from geometry_msgs.msg import Point, PointStamped, Pose
 from dynamic_reconfigure.server import Server
-from std_msgs.msg import Int32
 
 from frontier_detector.cfg import informationGainConfig
 
@@ -180,8 +179,6 @@ def node():
     # Publishers
     pub_frontiers = rospy.Publisher(rospy.get_name() + '/frontiers', Marker, queue_size=1)
     pub_centroids = rospy.Publisher(rospy.get_name() + '/centroids', Marker, queue_size=1)
-    pub_len_centroids = rospy.Publisher(rospy.get_name() + '/len_centroids', Int32, queue_size=1)
-
     pub_filt_points = rospy.Publisher(rospy.get_name() + '/filtered_points', PointArray, queue_size=1)
     
     # Wait if no frontier is received yet
@@ -338,7 +335,6 @@ def node():
         points_clust.header.frame_id = global_map_.header.frame_id
         #rospy.loginfo(f"points_clust = {points_clust}")
         pub_centroids.publish(points_clust)
-        pub_len_centroids.publish(len(points_clust.points))
         pub_filt_points.publish(temp_point_array)
 
         pp = []

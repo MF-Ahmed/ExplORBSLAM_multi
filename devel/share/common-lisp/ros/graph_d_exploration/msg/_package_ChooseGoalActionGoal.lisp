@@ -1,1 +1,8 @@
-/home/usr/data/ExplOrbSLAM_working/devel/.private/graph_d_exploration/share/common-lisp/ros/graph_d_exploration/msg/_package_ChooseGoalActionGoal.lisp
+(cl:in-package graph_d_exploration-msg)
+(cl:export '(HEADER-VAL
+          HEADER
+          GOAL_ID-VAL
+          GOAL_ID
+          GOAL-VAL
+          GOAL
+))

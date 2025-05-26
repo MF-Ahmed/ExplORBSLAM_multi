@@ -1,1 +1,8 @@
-/home/usr/data/ExplOrbSLAM_working/devel/.private/hector_xacro_tools/lib/pkgconfig/hector_xacro_tools.pc
+prefix=/home/farhan/data/ExplOrbSLAM_ws/devel
+
+Name: hector_xacro_tools
+Description: Description of hector_xacro_tools
+Version: 0.5.2
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

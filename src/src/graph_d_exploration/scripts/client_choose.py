@@ -20,17 +20,16 @@ class ChooseGoalClient:
         # Keep track of the future objects
         self.future_handle = False
         # Timeout [s] for the server to give the result
-        self.timeout = 10.0 #2.5
+        self.timeout = 2.5
 
     # Run when client accepts goal
     def goal_response_callback(self):
-        pass
-        #rospy.loginfo(f'{self.client_name_} goal accepted by /client_choose')
+        rospy.loginfo(f'{self.client_name_} goal accepted by /client_choose')
 
     # Run when client sends feedback
     def feedback_callback(self, feedback_msg):
-        pass
-        #rospy.loginfo(f'{self.client_name_} received feedback:  {feedback_msg.check}')
+        rospy.loginfo(
+            f'{self.client_name_} received feedback:  {feedback_msg.check}')
 
     # Run when client sends final result
     def get_result_callback(self, state, result):
@@ -49,9 +48,10 @@ class ChooseGoalClient:
         goal_msg.matrix.data = flattened_matrices
         goal_msg.rows = rows
 
-        #rospy.loginfo(f'{self.client_name_} waiting for server...')
+        rospy.loginfo(
+            f'{self.client_name_} waiting for server...')
         self.client.wait_for_server()
-        #rospy.loginfo(f'{self.client_name_} sending goal...')
+        rospy.loginfo(f'{self.client_name_} sending goal...')
 
         # Returns future to goal handle; client runs feedback_callback after sending the goal
         self.future_handle = self.client.send_goal(
@@ -64,12 +64,9 @@ class ChooseGoalClient:
             result = ChooseGoalResult()
             result.goals = []
         else:
-            #rospy.loginfo(f'{self.client_name_} getting the result')
+            rospy.loginfo(f'{self.client_name_} getting the result')
 
             # Take the result of the server
             result = ChooseGoalResult()
             result = self.client.get_result()
-            rospy.loginfo(f'{self.client_name_} got result from the server as result')# : {result}')
-
-
         return result

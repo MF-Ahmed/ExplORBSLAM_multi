@@ -1,1 +1,8 @@
-/home/usr/data/ExplOrbSLAM_working/devel/.private/hector_moveit_actions/share/common-lisp/ros/hector_moveit_actions/msg/_package_ExecuteDroneTrajectoryAction.lisp
+(cl:in-package hector_moveit_actions-msg)
+(cl:export '(ACTION_GOAL-VAL
+          ACTION_GOAL
+          ACTION_RESULT-VAL
+          ACTION_RESULT
+          ACTION_FEEDBACK-VAL
+          ACTION_FEEDBACK
+))

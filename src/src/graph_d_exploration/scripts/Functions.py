@@ -292,7 +292,6 @@ def draw_marker(namespace, x, y, color=[1.0,0.0,0.0], mtype="sphere", scale=0.1,
     marker.color.g = color[1]
     marker.color.b = color[2]
     marker.lifetime = rospy.Duration(1.5)
-    marker.ns = ns
     if mtype == "point":
         marker.type = Marker.POINTS
         marker.scale.x = marker.scale.y = scale
@@ -360,9 +359,9 @@ def ray_tracing(mapData,start_point, end_point):
         n -= 1 
     return distance, ray_cells
 
+def compute_entropy(namespace,map_data_,p_frontier_x,p_frontier_y,robotposxy):  
 
-
-def compute_entropy(namespace,map_data_,p_frontier_x,p_frontier_y,robotposxy):            
+    markerArray = MarkerArray()          
     entropy=0        
 
     start_point = Point(robotposxy[0], robotposxy[1] , 0)
@@ -450,10 +449,9 @@ def count_digits_before_decimal(number):
 
 
 
-def goal_marker(namespace, color=[1.0,0.0,0.0], x=0, y=0, mtype="sphere", scale=0.1, ns='GoalMarker_ns', lifetime = 1.0):
+def goal_marker(namespace, x, y, mtype="sphere", scale=0.1, ns='GoalMarker_ns'):
     # Create a Marker message
     #rospy.loginfo("got x at {} and y at {}".format(x,y))
-    lifetime_ = lifetime
     marker = Marker()
     marker.header.frame_id = namespace+"/map"       
     marker.header.stamp = rospy.Time.now() 
@@ -471,11 +469,29 @@ def goal_marker(namespace, color=[1.0,0.0,0.0], x=0, y=0, mtype="sphere", scale=
     marker.scale.z = 0.5
     marker.color.a = 1.0
 
-    marker.color.r = color[0]
-    marker.color.g = color[1]
-    marker.color.b = color[2]
+    if namespace == "robot_0":    
+        marker.color.r = 1.0 
+        marker.color.g = 0.0  
+        marker.color.b = 0.0        
+       
+    elif namespace == "robot_1":
+        marker.color.r = 0.0 
+        marker.color.g = 1.0  
+        marker.color.b = 0.0   
 
-    marker.lifetime = rospy.Duration(lifetime_)
+    elif namespace == "robot_2":
+        marker.color.r = 0.0 
+        marker.color.g = 0.0  
+        marker.color.b = 1.0   
+
+
+    else:
+        marker.color.r = 0.5 
+        marker.color.g = 0.0  
+        marker.color.b = 0.5           
+
+
+    marker.lifetime = rospy.Duration(1.5)
 
     if mtype == "point":
         marker.type = Marker.POINTS

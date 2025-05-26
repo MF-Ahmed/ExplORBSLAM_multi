@@ -1,13 +1,13 @@
 global_costmap:
-  global_frame: robot_2/map
-  robot_base_frame: robot_2/base_link
+  global_frame: robot_3/map
+  robot_base_frame: robot_3/base_link
   update_frequency: 1.0
   publish_frequency: 0.5
-  
-  
-  #rolling_window: true
+  origin_x: 120.0  # Adjusted origin x-coordinate
+  origin_y: 2.0  # Adjusted origin y-coordinate
 
-  static_map: true
+
+  static_map: false
 
 
 

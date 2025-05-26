@@ -1,1 +1,8 @@
-/home/usr/data/ExplOrbSLAM_working/devel/.private/hector_moveit_actions/lib/pkgconfig/hector_moveit_actions.pc
+prefix=/home/farhan/data/ExplOrbSLAM_ws/devel
+
+Name: hector_moveit_actions
+Description: Description of hector_moveit_actions
+Version: 0.0.0
+Cflags: -I/home/farhan/data/ExplOrbSLAM_ws/devel/include
+Libs: -L${prefix}/lib 
+Requires: roscpp actionlib_msgs hector_uav_msgs

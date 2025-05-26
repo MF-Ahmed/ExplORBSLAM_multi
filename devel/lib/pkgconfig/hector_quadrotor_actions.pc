@@ -1,1 +1,8 @@
-/home/usr/data/ExplOrbSLAM_working/devel/.private/hector_quadrotor_actions/lib/pkgconfig/hector_quadrotor_actions.pc
+prefix=/home/farhan/data/ExplOrbSLAM_ws/devel
+
+Name: hector_quadrotor_actions
+Description: Description of hector_quadrotor_actions
+Version: 0.0.0
+Cflags: -I/home/farhan/data/ExplOrbSLAM_ws/src/hector_quadrotor/hector_quadrotor_actions/include
+Libs: -L${prefix}/lib 
+Requires: roscpp

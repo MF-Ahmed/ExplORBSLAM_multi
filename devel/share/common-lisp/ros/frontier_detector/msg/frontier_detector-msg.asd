@@ -1,1 +1,10 @@
-/home/usr/data/ExplOrbSLAM_working/devel/.private/frontier_detector/share/common-lisp/ros/frontier_detector/msg/frontier_detector-msg.asd
+
+(cl:in-package :asdf)
+
+(defsystem "frontier_detector-msg"
+  :depends-on (:roslisp-msg-protocol :roslisp-utils :geometry_msgs-msg
+)
+  :components ((:file "_package")
+    (:file "PointArray" :depends-on ("_package_PointArray"))
+    (:file "_package_PointArray" :depends-on ("_package"))
+  ))

@@ -44,7 +44,7 @@ if(NOT OpenCV_FOUND)
 	endif()
 endif()
 
-add_message_files(FILES PointArray.msg iou.msg)
+add_message_files(FILES PointArray.msg)
 
 #add_service_files(
 #		DIRECTORY srv
@@ -77,22 +77,13 @@ include_directories(include
 # Frontier detectors
 add_executable(${PROJECT_NAME}_global_rrt src/GlobalRRTDetector.cpp
 		src/Functions.cpp src/Mtrand.cpp)
-add_executable(${PROJECT_NAME}_global_rrt_iou src/GlobalRRTDetector_iou.cpp
-		src/Functions.cpp src/Mtrand.cpp)
 
 target_link_libraries(${PROJECT_NAME}_global_rrt	${catkin_LIBRARIES})
 
-target_link_libraries(${PROJECT_NAME}_global_rrt_iou	${catkin_LIBRARIES})
-
 add_executable(${PROJECT_NAME}_local_rrt src/LocalRRTDetector.cpp
 		src/Functions.cpp src/Mtrand.cpp)
-add_executable(${PROJECT_NAME}_local_rrt_iou src/LocalRRTDetector_iou.cpp
-		src/Functions.cpp src/Mtrand.cpp)
-
-
 
 target_link_libraries(${PROJECT_NAME}_local_rrt	${catkin_LIBRARIES})
-target_link_libraries(${PROJECT_NAME}_local_rrt_iou	${catkin_LIBRARIES})
 
 
 # Octomapper
@@ -111,30 +102,6 @@ add_executable(${PROJECT_NAME}_gridmapper	src/GridMapper.cpp)
 add_dependencies(${PROJECT_NAME}_gridmapper	${catkin_EXPORTED_TARGETS}
 		${${PROJECT_NAME}_EXPORTED_TARGETS})
 
-
 target_link_libraries(${PROJECT_NAME}_gridmapper	${catkin_LIBRARIES}
 		${EIGEN3_LIBS}
 		${OpenCV_LIBS})
-
-
-
-		
-# MapMerger
-add_executable(${PROJECT_NAME}_mapMerger	src/map_merger.cpp)
-
-target_link_libraries(${PROJECT_NAME}_mapMerger ${catkin_LIBRARIES} )
-
-# compute_iou
-add_executable(${PROJECT_NAME}_iou	src/compute_iou.cpp)
-
-target_link_libraries(${PROJECT_NAME}_iou ${catkin_LIBRARIES} )
-
-
-# compute_area
-add_executable(${PROJECT_NAME}_area	src/area_calculator.cpp)
-
-target_link_libraries(${PROJECT_NAME}_area ${catkin_LIBRARIES} )
-
-
-
-

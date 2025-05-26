@@ -130,6 +130,14 @@ System::System(const string strVocFile, const eSensor sensor, ORBParameters& par
     tMapGraphPublisher_ = new thread(&ORB_SLAM2::MapGraphPublisher::run, pMapGraphPublisher_);
 }
 
+Tracking* System::GetTracker() {
+    return mpTracker;
+}
+
+
+
+
+
 void System::TrackStereo(const cv::Mat &imLeft, const cv::Mat &imRight, const double &timestamp)
 {
     if(mSensor!=STEREO)

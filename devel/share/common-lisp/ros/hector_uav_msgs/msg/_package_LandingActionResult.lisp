@@ -1,1 +1,8 @@
-/home/usr/data/ExplOrbSLAM_working/devel/.private/hector_uav_msgs/share/common-lisp/ros/hector_uav_msgs/msg/_package_LandingActionResult.lisp
+(cl:in-package hector_uav_msgs-msg)
+(cl:export '(HEADER-VAL
+          HEADER
+          STATUS-VAL
+          STATUS
+          RESULT-VAL
+          RESULT
+))

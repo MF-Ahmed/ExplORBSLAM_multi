@@ -1,1 +1,6 @@
-/home/usr/data/ExplOrbSLAM_working/devel/.private/orb_slam2_ros/share/common-lisp/ros/orb_slam2_ros/msg/_package_ORBState.lisp
+(cl:in-package orb_slam2_ros-msg)
+(cl:export '(HEADER-VAL
+          HEADER
+          STATE-VAL
+          STATE
+))

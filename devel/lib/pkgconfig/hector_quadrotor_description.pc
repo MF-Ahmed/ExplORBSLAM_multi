@@ -1,1 +1,8 @@
-/home/usr/data/ExplOrbSLAM_working/devel/.private/hector_quadrotor_description/lib/pkgconfig/hector_quadrotor_description.pc
+prefix=/home/farhan/data/ExplOrbSLAM_ws/devel
+
+Name: hector_quadrotor_description
+Description: Description of hector_quadrotor_description
+Version: 0.3.5
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

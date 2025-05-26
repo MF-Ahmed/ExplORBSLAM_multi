@@ -5,10 +5,8 @@ Panels:
     Property Tree Widget:
       Expanded:
         - /MarkerArray11/Namespaces1
-        - /Iou_Frontiers1/Namespaces1
-        - /robot_0_saved_goals1/Namespaces1
-      Splitter Ratio: 0.6373873949050903
-    Tree Height: 410
+      Splitter Ratio: 0.5268292427062988
+    Tree Height: 371
   - Class: rviz/Selection
     Name: Selection
   - Class: rviz/Tool Properties
@@ -25,7 +23,7 @@ Panels:
   - Class: rviz/Time
     Name: Time
     SyncMode: 0
-    SyncSource: ORBSLAM_0
+    SyncSource: ORBSLAM_1
 Preferences:
   PromptSaveOnExit: true
 Toolbars:
@@ -239,42 +237,22 @@ Visualization Manager:
       Class: rviz/Map
       Color Scheme: map
       Draw Behind: false
-      Enabled: false
-      Name: IOU_Map
-      Topic: /map_iou_calculator/iou_map
-      Unreliable: false
-      Use Timestamp: false
-      Value: false
-    - Alpha: 0.699999988079071
-      Class: rviz/Map
-      Color Scheme: map
-      Draw Behind: false
-      Enabled: false
+      Enabled: true
       Name: Proj_Map_0
       Topic: /robot_0/gridmapper/projected_map
       Unreliable: false
       Use Timestamp: false
-      Value: false
+      Value: true
     - Alpha: 0.699999988079071
       Class: rviz/Map
       Color Scheme: map
       Draw Behind: false
-      Enabled: false
+      Enabled: true
       Name: Proj_Map_1
       Topic: /robot_1/gridmapper/projected_map
       Unreliable: false
       Use Timestamp: false
-      Value: false
-    - Alpha: 0.699999988079071
-      Class: rviz/Map
-      Color Scheme: map
-      Draw Behind: false
-      Enabled: false
-      Name: Proj_Map_Drone_0
-      Topic: /drone_0/gridmapper/projected_map
-      Unreliable: false
-      Use Timestamp: false
-      Value: false
+      Value: true
     - Alpha: 0.699999988079071
       Class: rviz/Map
       Color Scheme: map
@@ -296,36 +274,110 @@ Visualization Manager:
       Use Timestamp: false
       Value: false
     - Class: octomap_rviz_plugin/OccupancyGrid
-      Enabled: true
+      Enabled: false
       Max. Height Display: 3.4028234663852886e+38
       Max. Octree Depth: 16
       Min. Height Display: -3.4028234663852886e+38
       Name: Octomap_1
       Octomap Topic: /robot_1/octomapper/octomap
       Queue Size: 5
-      Value: true
+      Value: false
       Voxel Alpha: 1
       Voxel Coloring: Z-Axis
       Voxel Rendering: Occupied Voxels
     - Class: octomap_rviz_plugin/OccupancyGrid
-      Enabled: true
+      Enabled: false
       Max. Height Display: 3.4028234663852886e+38
       Max. Octree Depth: 16
       Min. Height Display: -3.4028234663852886e+38
       Name: Octomap_0
       Octomap Topic: /robot_0/octomapper/octomap
       Queue Size: 5
-      Value: true
+      Value: false
       Voxel Alpha: 1
       Voxel Coloring: Z-Axis
       Voxel Rendering: Occupied Voxels
     - Class: rviz/TF
-      Enabled: false
+      Enabled: true
       Filter (blacklist): ""
       Filter (whitelist): ""
       Frame Timeout: 15
       Frames:
         All Enabled: false
+        drone_0/map:
+          Value: true
+        drone_map:
+          Value: false
+        map:
+          Value: true
+        mergedmap:
+          Value: false
+        robot_0/base_link:
+          Value: true
+        robot_0/body_link:
+          Value: false
+        robot_0/camera_depth_frame:
+          Value: false
+        robot_0/camera_link:
+          Value: false
+        robot_0/camera_rgb_frame:
+          Value: false
+        robot_0/front_left_wheel:
+          Value: false
+        robot_0/front_right_wheel:
+          Value: false
+        robot_0/laser:
+          Value: false
+        robot_0/map:
+          Value: true
+        robot_0/range_fl:
+          Value: false
+        robot_0/range_fr:
+          Value: false
+        robot_0/range_rl:
+          Value: false
+        robot_0/range_rr:
+          Value: false
+        robot_0/rear_left_wheel:
+          Value: false
+        robot_0/rear_right_wheel:
+          Value: false
+        robot_0/top:
+          Value: false
+        robot_1/base_link:
+          Value: true
+        robot_1/body_link:
+          Value: false
+        robot_1/camera_depth_frame:
+          Value: false
+        robot_1/camera_link:
+          Value: false
+        robot_1/camera_rgb_frame:
+          Value: false
+        robot_1/front_left_wheel:
+          Value: false
+        robot_1/front_right_wheel:
+          Value: false
+        robot_1/laser:
+          Value: false
+        robot_1/map:
+          Value: true
+        robot_1/range_fl:
+          Value: false
+        robot_1/range_fr:
+          Value: false
+        robot_1/range_rl:
+          Value: false
+        robot_1/range_rr:
+          Value: false
+        robot_1/rear_left_wheel:
+          Value: false
+        robot_1/rear_right_wheel:
+          Value: false
+        robot_1/top:
+          Value: false
+        robot_2/map:
+          Value: false
       Marker Alpha: 1
       Marker Scale: 2.5
       Name: TF
@@ -333,9 +385,73 @@ Visualization Manager:
       Show Axes: true
       Show Names: true
       Tree:
-        {}
+        map:
+          drone_0/map:
+            {}
+          drone_map:
+            {}
+          mergedmap:
+            {}
+          robot_0/map:
+            robot_0/base_link:
+              robot_0/body_link:
+                robot_0/camera_link:
+                  robot_0/camera_depth_frame:
+                    {}
+                  robot_0/camera_rgb_frame:
+                    {}
+                robot_0/front_left_wheel:
+                  {}
+                robot_0/front_right_wheel:
+                  {}
+                robot_0/laser:
+                  {}
+                robot_0/range_fl:
+                  {}
+                robot_0/range_fr:
+                  {}
+                robot_0/range_rl:
+                  {}
+                robot_0/range_rr:
+                  {}
+                robot_0/rear_left_wheel:
+                  {}
+                robot_0/rear_right_wheel:
+                  {}
+                robot_0/top:
+                  {}
+          robot_1/map:
+            robot_1/base_link:
+              robot_1/body_link:
+                robot_1/camera_link:
+                  robot_1/camera_depth_frame:
+                    {}
+                  robot_1/camera_rgb_frame:
+                    {}
+                robot_1/front_left_wheel:
+                  {}
+                robot_1/front_right_wheel:
+                  {}
+                robot_1/laser:
+                  {}
+                robot_1/range_fl:
+                  {}
+                robot_1/range_fr:
+                  {}
+                robot_1/range_rl:
+                  {}
+                robot_1/range_rr:
+                  {}
+                robot_1/rear_left_wheel:
+                  {}
+                robot_1/rear_right_wheel:
+                  {}
+                robot_1/top:
+                  {}
+          robot_2/map:
+            {}
       Update Interval: 0
-      Value: false
+      Value: true
     - Alpha: 1
       Autocompute Intensity Bounds: true
       Autocompute Value Bounds:
@@ -462,7 +578,7 @@ Visualization Manager:
       Buffer Length: 1
       Class: rviz/Path
       Color: 25; 255; 0
-      Enabled: true
+      Enabled: false
       Head Diameter: 0.30000001192092896
       Head Length: 0.20000000298023224
       Length: 0.30000001192092896
@@ -481,12 +597,12 @@ Visualization Manager:
       Shaft Length: 0.10000000149011612
       Topic: /robot_0/move_base/GlobalPlanner/plan
       Unreliable: false
-      Value: true
+      Value: false
     - Alpha: 1
       Buffer Length: 1
       Class: rviz/Path
       Color: 239; 41; 41
-      Enabled: true
+      Enabled: false
       Head Diameter: 0.30000001192092896
       Head Length: 0.20000000298023224
       Length: 0.30000001192092896
@@ -505,12 +621,12 @@ Visualization Manager:
       Shaft Length: 0.10000000149011612
       Topic: /robot_0/move_base/GlobalPlanner/plan
       Unreliable: false
-      Value: true
+      Value: false
     - Alpha: 1
       Buffer Length: 1
       Class: rviz/Path
       Color: 92; 53; 102
-      Enabled: true
+      Enabled: false
       Head Diameter: 0.30000001192092896
       Head Length: 0.20000000298023224
       Length: 0.30000001192092896
@@ -529,12 +645,12 @@ Visualization Manager:
       Shaft Length: 0.10000000149011612
       Topic: /robot_0/move_base/local_plan
       Unreliable: false
-      Value: true
+      Value: false
     - Alpha: 1
       Buffer Length: 1
       Class: rviz/Path
       Color: 92; 53; 102
-      Enabled: true
+      Enabled: false
       Head Diameter: 0.30000001192092896
       Head Length: 0.20000000298023224
       Length: 0.30000001192092896
@@ -553,7 +669,7 @@ Visualization Manager:
       Shaft Length: 0.10000000149011612
       Topic: /robot_0/move_base/local_plan
       Unreliable: false
-      Value: true
+      Value: false
     - Alpha: 1
       Buffer Length: 1
       Class: rviz/Path
@@ -699,29 +815,29 @@ Visualization Manager:
       Queue Size: 100
       Value: false
     - Class: rviz/Marker
-      Enabled: false
+      Enabled: true
       Marker Topic: /robot_0/filter/centroids
       Name: Centroids0
       Namespaces:
         {}
       Queue Size: 100
-      Value: false
+      Value: true
     - Class: rviz/Marker
-      Enabled: false
+      Enabled: true
       Marker Topic: /robot_1/filter/centroids
       Name: Centroids1
       Namespaces:
         {}
       Queue Size: 100
-      Value: false
+      Value: true
     - Class: rviz/Marker
-      Enabled: false
+      Enabled: true
       Marker Topic: /robot_2/filter/frontiers
       Name: Centroids2
       Namespaces:
         {}
       Queue Size: 100
-      Value: false
+      Value: true
     - Class: rviz/Marker
       Enabled: false
       Marker Topic: /robot_3/centroids
@@ -799,8 +915,7 @@ Visualization Manager:
       Marker Topic: /robot_0/visualization_marker/EntropyPath
       Name: Marker_0_goal
       Namespaces:
-        "": true
-        my_marker_ns: true
+        {}
       Queue Size: 100
       Value: true
     - Class: rviz/Marker
@@ -808,8 +923,7 @@ Visualization Manager:
       Marker Topic: /robot_1/visualization_marker/EntropyPath
       Name: Marker_1_goal
       Namespaces:
-        "": true
-        my_marker_ns: true
+        {}
       Queue Size: 100
       Value: true
     - Alpha: 0.699999988079071
@@ -846,7 +960,7 @@ Visualization Manager:
       Axes Radius: 0.009999999776482582
       Class: rviz/PoseArray
       Color: 255; 25; 0
-      Enabled: true
+      Enabled: false
       Head Length: 0.07000000029802322
       Head Radius: 0.029999999329447746
       Name: TEB_PoseArray_0
@@ -856,7 +970,7 @@ Visualization Manager:
       Shape: Arrow (Flat)
       Topic: /robot_0/move_base/TebLocalPlannerROS/teb_poses
       Unreliable: false
-      Value: true
+      Value: false
     - Class: rviz/Image
       Enabled: true
       Image Topic: /robot_0/orb_slam2_rgbd/tracking_image
@@ -915,7 +1029,7 @@ Visualization Manager:
       Axes Radius: 0.009999999776482582
       Class: rviz/PoseArray
       Color: 237; 212; 0
-      Enabled: true
+      Enabled: false
       Head Length: 0.07000000029802322
       Head Radius: 0.029999999329447746
       Name: TEB_PoseArray_1
@@ -925,7 +1039,7 @@ Visualization Manager:
       Shape: Arrow (Flat)
       Topic: /robot_1/move_base/TebLocalPlannerROS/teb_poses
       Unreliable: false
-      Value: true
+      Value: false
     - Alpha: 1
       Axes Length: 1
       Axes Radius: 0.10000000149011612
@@ -989,8 +1103,8 @@ Visualization Manager:
     - Alpha: 1
       Autocompute Intensity Bounds: true
       Autocompute Value Bounds:
-        Max Value: 7.787882328033447
-        Min Value: -1.097636342048645
+        Max Value: 2.958287239074707
+        Min Value: -1.2807821035385132
         Value: true
       Axis: Z
       Channel Name: intensity
@@ -998,7 +1112,7 @@ Visualization Manager:
       Color: 255; 255; 255
       Color Transformer: AxisColor
       Decay Time: 0
-      Enabled: false
+      Enabled: true
       Invert Rainbow: false
       Max Color: 255; 255; 255
       Min Color: 0; 0; 0
@@ -1013,7 +1127,7 @@ Visualization Manager:
       Unreliable: false
       Use Fixed Frame: true
       Use rainbow: true
-      Value: false
+      Value: true
     - Class: octomap_rviz_plugin/OccupancyGrid
       Enabled: true
       Max. Height Display: 3.4028234663852886e+38
@@ -1026,6 +1140,16 @@ Visualization Manager:
       Voxel Alpha: 1
       Voxel Coloring: Z-Axis
       Voxel Rendering: Occupied Voxels
+    - Alpha: 0.699999988079071
+      Class: rviz/Map
+      Color Scheme: map
+      Draw Behind: false
+      Enabled: true
+      Name: Proj_Map_Drone_0
+      Topic: /drone_0/gridmapper/projected_map
+      Unreliable: false
+      Use Timestamp: false
+      Value: true
     - Alpha: 0.699999988079071
       Class: rviz/Map
       Color Scheme: costmap
@@ -1072,84 +1196,54 @@ Visualization Manager:
       Unreliable: false
       Value: false
     - Class: rviz/MarkerArray
-      Enabled: true
+      Enabled: false
       Marker Topic: /robot_0/visualization_markerArray/EntropyPath2
-      Name: /robot_0/visualization_markerArray/EntropyPath2
+      Name: MarkerArray
       Namespaces:
-        my_marker_ns: true
+        {}
       Queue Size: 100
-      Value: true
+      Value: false
     - Class: rviz/MarkerArray
-      Enabled: true
+      Enabled: false
       Marker Topic: /robot_1/visualization_markerArray/EntropyPath2
-      Name: /robot_1/visualization_markerArray/EntropyPath2
-      Namespaces:
-        my_marker_ns: true
-      Queue Size: 100
-      Value: true
-    - Class: rviz/Marker
-      Enabled: false
-      Marker Topic: /map_iou_calculator/frontiers
-      Name: Iou_Frontiers
+      Name: MarkerArray
       Namespaces:
         {}
       Queue Size: 100
       Value: false
-    - Class: rviz/Marker
-      Enabled: false
-      Marker Topic: /opencv_shapes_iou
-      Name: ioU_forntiers_opencv
-      Namespaces:
-        {}
-      Queue Size: 100
-      Value: false
-    - Class: rviz/Marker
-      Enabled: false
-      Marker Topic: /local_detector_shapes
-      Name: Marker
-      Namespaces:
-        {}
-      Queue Size: 100
-      Value: false
-    - Class: rviz/Marker
-      Enabled: false
-      Marker Topic: /global_detector_shapes
-      Name: Marker
-      Namespaces:
-        {}
-      Queue Size: 100
-      Value: false
-    - Class: rviz/MarkerArray
+    - Alpha: 1
+      Arrow Length: 0.30000001192092896
+      Axes Length: 0.30000001192092896
+      Axes Radius: 0.009999999776482582
+      Class: rviz/PoseArray
+      Color: 114; 159; 207
       Enabled: true
-      Marker Topic: /robot_0/visualization_markerArray/saved_goals
-      Name: robot_0_saved_goals
-      Namespaces:
-        saved_goals: true
-      Queue Size: 100
+      Head Length: 0.07000000029802322
+      Head Radius: 0.029999999329447746
+      Name: PoseArray
+      Queue Size: 10
+      Shaft Length: 0.23000000417232513
+      Shaft Radius: 0.009999999776482582
+      Shape: Arrow (Flat)
+      Topic: /robot_0/orb_slam2_rgbd/pose_graph_array
+      Unreliable: false
       Value: true
-    - Class: rviz/MarkerArray
+    - Alpha: 1
+      Arrow Length: 0.30000001192092896
+      Axes Length: 0.30000001192092896
+      Axes Radius: 0.009999999776482582
+      Class: rviz/PoseArray
+      Color: 255; 25; 0
       Enabled: true
-      Marker Topic: /robot_1/visualization_markerArray/saved_goals
-      Name: robot_1_saved_goals
-      Namespaces:
-        saved_goals: true
-      Queue Size: 100
-      Value: true
-    - Class: rviz/MarkerArray
-      Enabled: true
-      Marker Topic: /robot_0/iou/iou_frontiers_filtered
-      Name: /robot_0/iou/iou_frontiers_filtered
-      Namespaces:
-        iou: true
-      Queue Size: 100
-      Value: true
-    - Class: rviz/MarkerArray
-      Enabled: true
-      Marker Topic: /robot_1/iou/iou_frontiers_filtered
-      Name: /robot_1/iou/iou_frontiers_filtered
-      Namespaces:
-        iou: true
-      Queue Size: 100
+      Head Length: 0.07000000029802322
+      Head Radius: 0.029999999329447746
+      Name: PoseArray
+      Queue Size: 10
+      Shaft Length: 0.23000000417232513
+      Shaft Radius: 0.009999999776482582
+      Shape: Arrow (Flat)
+      Topic: /robot_1/orb_slam2_rgbd/pose_graph_array
+      Unreliable: false
       Value: true
   Enabled: true
   Global Options:
@@ -1178,7 +1272,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 28.142974853515625
+      Distance: 13.934467315673828
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
@@ -1186,22 +1280,22 @@ Visualization Manager:
         Value: false
       Field of View: 0.7853981852531433
       Focal Point:
-        X: 0.09426183998584747
-        Y: -0.20815090835094452
-        Z: 1.3644084930419922
+        X: 1.9622653722763062
+        Y: 1.343599796295166
+        Z: -1.817046880722046
       Focal Shape Fixed Size: false
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 1.5697963237762451
+      Pitch: 1.4797965288162231
       Target Frame: <Fixed Frame>
-      Yaw: 4.683581829071045
+      Yaw: 4.675332069396973
     Saved: ~
 Window Geometry:
   Displays:
     collapsed: false
-  Height: 1403
+  Height: 1013
   Hide Left Dock: false
   Hide Right Dock: false
   ORBSLAM_0:
@@ -1210,7 +1304,7 @@ Window Geometry:
     collapsed: false
   ORBSLAM_Drone_0:
     collapsed: false
-  QMainWindow State: 000000ff00000000fd000000040000000000000215000004bdfc020000000cfb0000001200530065006c0065006300740069006f006e00000001e10000009b0000005c00fffffffb000000120056006900650077007300200054006f006f02000001df000002110000018500000122fb000000200054006f006f006c002000500072006f0070006500720074006900650073003203000002880000011d000002210000017afb000000100044006900730070006c006100790073010000003d000001d7000000c900fffffffb0000001e0054006f006f006c002000500072006f007000650072007400690065007300000002e5000000ad0000005c00fffffffb0000002000730065006c0065006300740069006f006e00200062007500660066006500720200000138000000aa0000023a00000294fb00000014005700690064006500530074006500720065006f02000000e6000000d2000003ee0000030bfb0000000c004b0069006e0065006300740200000186000001060000030c00000261fb00000012004f005200420053004c0041004d005f0030010000021a000001740000001600fffffffb0000000a0049006d00610067006501000001a3000000ae0000000000000000fb00000012004f005200420053004c0041004d005f00310100000394000001660000001600fffffffb0000001e004f005200420053004c0041004d005f00440072006f006e0065005f003000000001e9000001660000001600ffffff000000010000010f00000312fc0200000003fb0000001e0054006f006f006c002000500072006f00700065007200740069006500730100000041000000780000000000000000fb0000000a00560069006500770073000000003d00000312000000a400fffffffb0000001200530065006c0065006300740069006f006e010000025a000000b200000000000000000000000200000490000000a9fc0100000001fb0000000a00560069006500770073030000004e00000080000002e1000001970000000300000a000000005efc0100000002fb0000000800540069006d0065010000000000000a00000003bc00fffffffb0000000800540069006d00650100000000000004500000000000000000000007e5000004bd00000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
+  QMainWindow State: 000000ff00000000fd00000004000000000000018500000337fc020000000cfb0000001200530065006c0065006300740069006f006e00000001e10000009b0000005c00fffffffb000000120056006900650077007300200054006f006f02000001df000002110000018500000122fb000000200054006f006f006c002000500072006f0070006500720074006900650073003203000002880000011d000002210000017afb000000100044006900730070006c006100790073010000003d000001b0000000c900fffffffb0000001e0054006f006f006c002000500072006f007000650072007400690065007300000002e5000000ad0000005c00fffffffb0000002000730065006c0065006300740069006f006e00200062007500660066006500720200000138000000aa0000023a00000294fb00000014005700690064006500530074006500720065006f02000000e6000000d2000003ee0000030bfb0000000c004b0069006e0065006300740200000186000001060000030c00000261fb00000012004f005200420053004c0041004d005f003001000001f3000000ad0000001600fffffffb0000000a0049006d00610067006501000001a3000000ae0000000000000000fb00000012004f005200420053004c0041004d005f003101000002a6000000ce0000001600fffffffb0000001e004f005200420053004c0041004d005f00440072006f006e0065005f003000000002cf000000ac0000001600ffffff000000010000010f00000337fc0200000003fb0000001e0054006f006f006c002000500072006f00700065007200740069006500730100000041000000780000000000000000fb0000000a00560069006500770073010000003d00000337000000a400fffffffb0000001200530065006c0065006300740069006f006e010000025a000000b200000000000000000000000200000490000000a9fc0100000001fb0000000a00560069006500770073030000004e00000080000002e10000019700000003000006900000005efc0100000002fb0000000800540069006d0065010000000000000690000003bc00fffffffb0000000800540069006d00650100000000000004500000000000000000000003f00000033700000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
   Selection:
     collapsed: false
   Time:
@@ -1219,6 +1313,6 @@ Window Geometry:
     collapsed: false
   Views:
     collapsed: false
-  Width: 2560
+  Width: 1680
   X: 0
   Y: 0

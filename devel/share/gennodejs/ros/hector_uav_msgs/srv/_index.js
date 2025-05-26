@@ -1,1 +1,8 @@
-/home/usr/data/ExplOrbSLAM_working/devel/.private/hector_uav_msgs/share/gennodejs/ros/hector_uav_msgs/srv/_index.js
+
+"use strict";
+
+let EnableMotors = require('./EnableMotors.js')
+
+module.exports = {
+  EnableMotors: EnableMotors,
+};

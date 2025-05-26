@@ -22,14 +22,12 @@ from graph_d_exploration.msg import Point2D, MergePointsAction, MergePointsGoal,
 class MergePointsClient:
     def __init__(self, client_name):
         self.client_name_ = '/'+client_name+':'
-        self.client = actionlib.SimpleActionClient('/merge_points', MergePointsAction)
+        self.client = actionlib.SimpleActionClient(
+            '/merge_points', MergePointsAction)
         # Keep track of the future objects
         self.future_handle = False
         # Timeout [s] for the server to give the result
-        self.timeout = 10.0 # 2.5
-        self.aloo =[] 
-        self.client_call_count=0
-        rospy.loginfo(f'!!!!!!!!!!!!!!!  {self.client_name_} aloo cleared !!!!!!!!!!!!!')
+        self.timeout = 2.5
 
     # Run when client accepts goal
     def goal_response_callback(self):
@@ -43,21 +41,19 @@ class MergePointsClient:
     # Run when client sends final result
     def get_result_callback(self, state, result):
         # Show log and exit node
-        rospy.loginfo(f'{self.client_name_} goal to server sent : {(result)}')
+        rospy.loginfo(f'{self.client_name_} received {len(result.merged_points)} points from /server_merge !!!!')
 
     # Waits for server to be available, then sends goal
     def send_goal(self, points_):
         points = np.array(points_)
         goal_msg = MergePointsGoal()
         goal_msg.client_id = self.client_name_
-        #self.client_call_count+1
 
         for _point in points:
             p_ = Point2D()
             p_.x = _point[0]
             p_.y = _point[1]
             goal_msg.points.append(p_)
-               
 
         rospy.loginfo(
             f'{self.client_name_} waiting for server...')
@@ -81,7 +77,5 @@ class MergePointsClient:
             # Take the result of the server
             result = MergePointsResult()
             result = self.client.get_result()
-            rospy.loginfo(f'!!!!!!!!!!! {self.client_name_} received {len(result.merged_points)} points from /server_merge  with percentage : {result.percentage_used},  and radius: {result.radius_used} !!!!')
-
         
         return result

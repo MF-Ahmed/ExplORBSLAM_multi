@@ -20,11 +20,11 @@ from constants import GOAL_SKIP_WAIT
 
 # Prototype of the callbacks used in an iterative way
 def cncallback0(data, robot_id):
-    global c, recc, c_new 
+    global c, recc
     # if not recc[robot_id]:
     c[robot_id] = []
     for point in data.points:
-        c[robot_id].append(np.array([point.x, point.y]))     
+        c[robot_id].append(np.array([point.x, point.y]))
     recc[robot_id] = True
 
 
@@ -35,10 +35,12 @@ def cncallback1(data, robot_id):
         m = np.array(data.data).reshape(data.rows, 3)
         recr[robot_id] = True
 
+
 def cncallback2(data, robot_id):
     global graph_started
     graph_started[robot_id] = data.data
     #rospy.loginfo(f"/mamager graph started callback graph_started[robot_id]: {graph_started[robot_id]}")
+
 
 
 def cncallback3(msg, robot_id):
@@ -84,7 +86,7 @@ def create_callbacks(num_robots, cb):
 def node():
 
 
-    global c, c_new, m, recc, recr, graph_started, goal_status, server_requested
+    global c, m, recc, recr, graph_started, goal_status, server_requested
 
     rospy.init_node('manager', anonymous=False)
     rospy.loginfo('Started node')
@@ -101,9 +103,6 @@ def node():
 
     # Create empty lists to store the point data for each robot
     c = [[] for _ in range(num_robots)]
-
-    c_new = []
-
 
     # Create empty numpy arrays to store the matrix data for each robot
     m = [np.zeros((1, 3)) for _ in range(num_robots)]
@@ -177,10 +176,7 @@ def node():
     # Publisher for the radius value
     radius_value_publisher = rospy.Publisher(
         'radius_value', Float32, queue_size=10)
-    
-    # Publisher for the percentage value
-    percentage_value_publisher = rospy.Publisher(
-        'percentage_value', Float32, queue_size=10)
+
 
     rate = 0.25
 
@@ -190,8 +186,6 @@ def node():
         # Check the status of the requests from the agents
         id = -1
         # Look for the first which is true
-        #rospy.loginfo(f"!!!!!!!!!!!!!!!  server requested = {server_requested}")
-
         for index, value in enumerate(server_requested):
             if value:
                 if id == -1:
@@ -233,8 +227,6 @@ def node():
             central_server_occupied_pub.publish(array_allow)
 
             # Wait until at least one of the agents published the frontiers
-            rospy.loginfo(rospy.get_name() +  "Wait until at least one of the agents published the frontiers")
-
             while not any(recc):
                 continue
             
@@ -245,25 +237,21 @@ def node():
             rospy.loginfo(rospy.get_name() + " Server Busy")
 
             rospy.loginfo(rospy.get_name() + ' Sending goal for merging')
-            # Send goal and store the result
-  
-            result = MergePointsResult()
-            rospy.loginfo(rospy.get_name() + f' Get result from the server as {result}')
 
+            # Send goal and store the result
+            result = MergePointsResult()
             c_all = []
-         
             for i in range(num_robots):
                 c_all.extend(c[i])
-         
+
             msg = Int32()
             if c_all != []:
                 msg = len(c_all)
             else:
                 msg = 0
-
-
-            received_list_points_publisher.publish(msg)            
+            received_list_points_publisher.publish(msg)
             result = client_mergeCentroids.send_goal(c_all)
+
             tempPointArray = PointArray()
 
             # Publish the result back to the assigner nodes
@@ -276,11 +264,11 @@ def node():
 
             # Reset the flags
             recr = [False] * num_robots
+
             # Print log
             rospy.loginfo(rospy.get_name() + ' Publishing result')
             merged_centroids_pub.publish(tempPointArray.points)
             radius_value_publisher.publish(result.radius_used)
-            percentage_value_publisher.publish(result.percentage_used)
 
             # Reset the flags
             recc = [False] * num_robots
@@ -289,7 +277,7 @@ def node():
 
             rospy.loginfo(rospy.get_name() + f' Waiting for robot_{index_robot} to publish [Reward, X, Y] information')
             
-            while not any(recr):   #The loop will terminate once at least one element in recr becomes True
+            while not any(recr):
                 continue
 
             #rospy.loginfo(rospy.get_name() + f' got [Reward, X, Y] information Waiting for robot_{index_robot}')

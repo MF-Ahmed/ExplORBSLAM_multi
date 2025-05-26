@@ -1,1 +1,8 @@
-/home/usr/data/ExplOrbSLAM_working/devel/.private/hector_components_description/lib/pkgconfig/hector_components_description.pc
+prefix=/home/farhan/data/ExplOrbSLAM_ws/devel
+
+Name: hector_components_description
+Description: Description of hector_components_description
+Version: 0.5.2
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

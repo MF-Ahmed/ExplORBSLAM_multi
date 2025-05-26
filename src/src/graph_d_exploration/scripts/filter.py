@@ -100,8 +100,8 @@ def frontiersCallBack(data, args):
             assert (len(frontiers_) == len(f_timestamps_))
         else:
             try:
-                rospy.logerr(namespace+" Frontier callback failed due to dimension mismatch of " + str(
-                    len(temp_array) - len(temp_time)) + ". Skipping callback.")
+            rospy.logerr(namespace+" Frontier callback failed due to dimension mismatch of " + str(
+                len(temp_array) - len(temp_time)) + ". Skipping callback.")
             except Exception as e:
                # By this way we can know about the type of error occurring
                 rospy.logerr("The error is: ",e)

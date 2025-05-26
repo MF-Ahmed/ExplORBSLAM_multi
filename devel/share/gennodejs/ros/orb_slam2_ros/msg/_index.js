@@ -1,1 +1,10 @@
-/home/usr/data/ExplOrbSLAM_working/devel/.private/orb_slam2_ros/share/gennodejs/ros/orb_slam2_ros/msg/_index.js
+
+"use strict";
+
+let PoseGraphKeyFrame = require('./PoseGraphKeyFrame.js');
+let ORBState = require('./ORBState.js');
+
+module.exports = {
+  PoseGraphKeyFrame: PoseGraphKeyFrame,
+  ORBState: ORBState,
+};

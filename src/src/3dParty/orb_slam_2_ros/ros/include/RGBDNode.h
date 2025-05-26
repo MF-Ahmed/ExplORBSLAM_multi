@@ -35,6 +35,8 @@
 #include <sensor_msgs/image_encodings.h>
 #include <opencv2/core/core.hpp>
 #include <tf/transform_broadcaster.h>
+#include "PoseGraphPublisher.h"
+#include "PoseGraphReceiver.h"
 
 #include "System.h"
 #include "Node.h"
@@ -52,6 +54,10 @@ class RGBDNode : public Node
     message_filters::Subscriber<sensor_msgs::Image> *rgb_subscriber_;
     message_filters::Subscriber<sensor_msgs::Image> *depth_subscriber_;
     message_filters::Synchronizer<sync_pol> *sync_;
+    PoseGraphPublisher* pose_graph_publisher_;
+    long last_published_kf_id_;
+    PoseGraphReceiver* pose_graph_receiver_;
+    
 };
 
 #endif //ORBSLAM2_ROS_RGBDODE_H_

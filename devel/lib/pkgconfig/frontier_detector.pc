@@ -1,1 +1,8 @@
-/home/usr/data/ExplOrbSLAM_working/devel/.private/frontier_detector/lib/pkgconfig/frontier_detector.pc
+prefix=/home/farhan/data/ExplOrbSLAM_ws/devel
+
+Name: frontier_detector
+Description: Description of frontier_detector
+Version: 0.0.0
+Cflags: -I/home/farhan/data/ExplOrbSLAM_ws/devel/include -I/home/farhan/data/ExplOrbSLAM_ws/src/src/frontier_detector/include
+Libs: -L${prefix}/lib 
+Requires: roscpp rospy std_msgs tf geometry_msgs nav_msgs visualization_msgs dynamic_reconfigure message_runtime octomap_ros

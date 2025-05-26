@@ -36,7 +36,7 @@
         <param name="/target_frame_id"      value="$(arg robot_frame)"/>
         <param name="/pointcloud_frame_id"  value="$(arg global_frame)"/>
         <param name="/octomap/rebuild"      value="false"/>
-        <param name="/max_height"           value="1.0"/> <!-- changed from 3 -->
+        <param name="/max_height"           value="1.5"/> <!-- changed from 3 -->
         <param name="/min_height"           value="0.2"/> 
         <param name="namespace"             value="$(arg robot_namespace)"/>
     </node>

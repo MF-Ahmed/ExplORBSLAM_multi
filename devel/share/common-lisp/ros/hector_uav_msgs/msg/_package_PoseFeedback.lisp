@@ -1,1 +1,4 @@
-/home/usr/data/ExplOrbSLAM_working/devel/.private/hector_uav_msgs/share/common-lisp/ros/hector_uav_msgs/msg/_package_PoseFeedback.lisp
+(cl:in-package hector_uav_msgs-msg)
+(cl:export '(CURRENT_POSE-VAL
+          CURRENT_POSE
+))

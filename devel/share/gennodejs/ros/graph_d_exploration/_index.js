@@ -1,1 +1,6 @@
-/home/usr/data/ExplOrbSLAM_working/devel/.private/graph_d_exploration/share/gennodejs/ros/graph_d_exploration/_index.js
+
+"use strict";
+
+module.exports = {
+  msg: require('./msg/_index.js'),
+};

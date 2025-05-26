@@ -1,1 +1,8 @@
-/home/usr/data/ExplOrbSLAM_working/devel/.private/hector_moveit/lib/pkgconfig/hector_moveit.pc
+prefix=/home/farhan/data/ExplOrbSLAM_ws/devel
+
+Name: hector_moveit
+Description: Description of hector_moveit
+Version: 0.3.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

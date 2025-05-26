@@ -1573,7 +1573,11 @@ void Tracking::InformOnlyTracking(const bool &flag)
 {
     mbOnlyTracking = flag;
 }
-
+ KeyFrame* Tracking::GetLastKeyFrame()
+ {
+	return mpLastKeyFrame;
+ }
+ 
 
 
 } //namespace ORB_SLAM

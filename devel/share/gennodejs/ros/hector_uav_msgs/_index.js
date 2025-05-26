@@ -1,1 +1,7 @@
-/home/usr/data/ExplOrbSLAM_working/devel/.private/hector_uav_msgs/share/gennodejs/ros/hector_uav_msgs/_index.js
+
+"use strict";
+
+module.exports = {
+  msg: require('./msg/_index.js'),
+  srv: require('./srv/_index.js')
+};

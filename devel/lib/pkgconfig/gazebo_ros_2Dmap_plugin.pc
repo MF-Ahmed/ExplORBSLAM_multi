@@ -1,1 +1,0 @@
-/home/usr/data/ExplOrbSLAM_working/devel/.private/gazebo_ros_2Dmap_plugin/lib/pkgconfig/gazebo_ros_2Dmap_plugin.pc

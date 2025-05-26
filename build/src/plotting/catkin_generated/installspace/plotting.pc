@@ -1,0 +1,8 @@
+prefix=/home/farhan/data/ExplOrbSLAM_ws/install
+
+Name: plotting
+Description: Description of plotting
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

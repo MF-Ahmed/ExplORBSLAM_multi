@@ -1,1 +1,6 @@
-/home/usr/data/ExplOrbSLAM_working/devel/.private/graph_d_exploration/share/common-lisp/ros/graph_d_exploration/msg/_package_Point2D.lisp
+(cl:in-package graph_d_exploration-msg)
+(cl:export '(X-VAL
+          X
+          Y-VAL
+          Y
+))

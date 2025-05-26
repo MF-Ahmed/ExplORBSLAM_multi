@@ -1,1 +1,14 @@
-/home/usr/data/ExplOrbSLAM_working/devel/.private/hector_uav_msgs/share/common-lisp/ros/hector_uav_msgs/msg/_package_MotorStatus.lisp
+(cl:in-package hector_uav_msgs-msg)
+(cl:export '(HEADER-VAL
+          HEADER
+          ON-VAL
+          ON
+          RUNNING-VAL
+          RUNNING
+          VOLTAGE-VAL
+          VOLTAGE
+          FREQUENCY-VAL
+          FREQUENCY
+          CURRENT-VAL
+          CURRENT
+))

@@ -1,1 +1,6 @@
-/home/usr/data/ExplOrbSLAM_working/devel/.private/hector_uav_msgs/share/common-lisp/ros/hector_uav_msgs/srv/_package_EnableMotors.lisp
+(cl:in-package hector_uav_msgs-srv)
+(cl:export '(ENABLE-VAL
+          ENABLE
+          SUCCESS-VAL
+          SUCCESS
+))

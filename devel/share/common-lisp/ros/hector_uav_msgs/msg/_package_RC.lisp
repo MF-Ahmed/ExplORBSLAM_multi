@@ -1,1 +1,16 @@
-/home/usr/data/ExplOrbSLAM_working/devel/.private/hector_uav_msgs/share/common-lisp/ros/hector_uav_msgs/msg/_package_RC.lisp
+(cl:in-package hector_uav_msgs-msg)
+(cl:export '(HEADER-VAL
+          HEADER
+          STATUS-VAL
+          STATUS
+          VALID-VAL
+          VALID
+          AXIS-VAL
+          AXIS
+          AXIS_FUNCTION-VAL
+          AXIS_FUNCTION
+          SWIT-VAL
+          SWIT
+          SWIT_FUNCTION-VAL
+          SWIT_FUNCTION
+))

@@ -38,7 +38,7 @@ class Robot:
         self.pose = Pose()
 
         self.assigned_point = []
-        self.name = name  # namespace of the robot (robot_0, robot_1, ...)
+        self.name = name  # namespace of the robot (robot_1, robot_2, ...)
         rospy.loginfo(rospy.get_name() + ': Robot Class started with robot name: ' + name)
 
         self.global_frame = rospy.get_param('~global_frame',self.name + '/map')
@@ -82,28 +82,11 @@ class Robot:
         self.end.header.frame_id = self.global_frame
         rospy.loginfo(rospy.get_name() + ': Initialized robot.')
 
-
-        if  self.name == "robot_0":
-            rospy.loginfo(rospy.get_name() + ": Moving robot to +[-1,1].")
-            x = self.position[0] -1.0
-            y = self.position[1] + 1.0
-            self.sendGoal([x, y])
-            rospy.loginfo(rospy.get_name() + ": Moved robot to: [" + str(x) + ", " + str(y) + "].")
-
-        elif  self.name ==  "robot_1":
-            rospy.loginfo(rospy.get_name() + ": Moving robot to +[1,1].")
-            x = self.position[0] + 1.0
-            y = self.position[1] + 1.0
-            self.sendGoal([x, y])
-            rospy.loginfo(rospy.get_name() + ": Moved robot to: [" + str(x) + ", " + str(y) + "].")        
-
-        else:
-            rospy.loginfo(rospy.get_name() + ": Moving robot to +[-1,-1].")
-            x = self.position[0] - 1.0
-            y = self.position[1] - 1.0
-            self.sendGoal([x, y])
-            rospy.loginfo(rospy.get_name() + ": Moved robot to: [" + str(x) + ", " + str(y) + "].")           
-
+        rospy.loginfo(rospy.get_name() + ": Moving robot to +[0.1,0.1].")
+        x = self.position[0] + 0.1
+        y = self.position[1] + 0.1
+        self.sendGoal([x, y])
+        rospy.loginfo(rospy.get_name() + ": Moved robot to: [" + str(x) + ", " + str(y) + "].")
 
     def getPosition(self) -> np.array:
         """

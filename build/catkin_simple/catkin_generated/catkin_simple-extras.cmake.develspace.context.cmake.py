@@ -2,7 +2,7 @@
 DEVELSPACE = 'TRUE' == 'TRUE'
 INSTALLSPACE = 'FALSE' == 'TRUE'
 
-CATKIN_DEVEL_PREFIX = '/home/usr/data/ExplOrbSLAM_working/devel/.private/catkin_simple'
+CATKIN_DEVEL_PREFIX = '/home/farhan/data/ExplOrbSLAM_ws/devel'
 
 CATKIN_GLOBAL_BIN_DESTINATION = 'bin'
 CATKIN_GLOBAL_ETC_DESTINATION = 'etc'
@@ -20,14 +20,14 @@ CATKIN_PACKAGE_LIBEXEC_DESTINATION = 'lib/catkin_simple'
 CATKIN_PACKAGE_PYTHON_DESTINATION = 'lib/python3/dist-packages/catkin_simple'
 CATKIN_PACKAGE_SHARE_DESTINATION = 'share/catkin_simple'
 
-CMAKE_BINARY_DIR = '/home/usr/data/ExplOrbSLAM_working/build/catkin_simple'
-CMAKE_CURRENT_BINARY_DIR = '/home/usr/data/ExplOrbSLAM_working/build/catkin_simple'
-CMAKE_CURRENT_SOURCE_DIR = '/home/usr/data/ExplOrbSLAM_working/src/catkin_simple'
-CMAKE_INSTALL_PREFIX = '/home/usr/data/ExplOrbSLAM_working/install'
-CMAKE_SOURCE_DIR = '/home/usr/data/ExplOrbSLAM_working/src/catkin_simple'
+CMAKE_BINARY_DIR = '/home/farhan/data/ExplOrbSLAM_ws/build'
+CMAKE_CURRENT_BINARY_DIR = '/home/farhan/data/ExplOrbSLAM_ws/build/catkin_simple'
+CMAKE_CURRENT_SOURCE_DIR = '/home/farhan/data/ExplOrbSLAM_ws/src/catkin_simple'
+CMAKE_INSTALL_PREFIX = '/home/farhan/data/ExplOrbSLAM_ws/install'
+CMAKE_SOURCE_DIR = '/home/farhan/data/ExplOrbSLAM_ws/src'
 
-PKG_CMAKE_DIR = '/home/usr/data/ExplOrbSLAM_working/devel/.private/catkin_simple/share/catkin_simple/cmake'
+PKG_CMAKE_DIR = '/home/farhan/data/ExplOrbSLAM_ws/devel/share/catkin_simple/cmake'
 
 PROJECT_NAME = 'catkin_simple'
-PROJECT_BINARY_DIR = '/home/usr/data/ExplOrbSLAM_working/build/catkin_simple'
-PROJECT_SOURCE_DIR = '/home/usr/data/ExplOrbSLAM_working/src/catkin_simple'
+PROJECT_BINARY_DIR = '/home/farhan/data/ExplOrbSLAM_ws/build/catkin_simple'
+PROJECT_SOURCE_DIR = '/home/farhan/data/ExplOrbSLAM_ws/src/catkin_simple'

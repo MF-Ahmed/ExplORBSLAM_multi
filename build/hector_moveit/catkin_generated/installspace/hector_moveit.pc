@@ -1,4 +1,4 @@
-prefix=/home/usr/data/ExplOrbSLAM_working/install
+prefix=/home/farhan/data/ExplOrbSLAM_ws/install
 
 Name: hector_moveit
 Description: Description of hector_moveit

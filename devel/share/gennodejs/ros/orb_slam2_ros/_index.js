@@ -1,1 +1,7 @@
-/home/usr/data/ExplOrbSLAM_working/devel/.private/orb_slam2_ros/share/gennodejs/ros/orb_slam2_ros/_index.js
+
+"use strict";
+
+module.exports = {
+  msg: require('./msg/_index.js'),
+  srv: require('./srv/_index.js')
+};

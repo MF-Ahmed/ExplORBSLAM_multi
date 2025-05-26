@@ -1,1 +1,4 @@
-/home/usr/data/ExplOrbSLAM_working/devel/.private/frontier_detector/share/common-lisp/ros/frontier_detector/msg/_package_PointArray.lisp
+(cl:in-package frontier_detector-msg)
+(cl:export '(POINTS-VAL
+          POINTS
+))

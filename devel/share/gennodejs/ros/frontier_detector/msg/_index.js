@@ -1,1 +1,8 @@
-/home/usr/data/ExplOrbSLAM_working/devel/.private/frontier_detector/share/gennodejs/ros/frontier_detector/msg/_index.js
+
+"use strict";
+
+let PointArray = require('./PointArray.js');
+
+module.exports = {
+  PointArray: PointArray,
+};

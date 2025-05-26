@@ -1,1 +1,4 @@
-/home/usr/data/ExplOrbSLAM_working/devel/.private/hector_uav_msgs/share/common-lisp/ros/hector_uav_msgs/msg/_package_LandingGoal.lisp
+(cl:in-package hector_uav_msgs-msg)
+(cl:export '(LANDING_ZONE-VAL
+          LANDING_ZONE
+))

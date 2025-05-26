@@ -153,6 +153,7 @@ public:
     std::list<float> getVertex();
     std::list<float> getEdges();
     std::list<float> getMapPoints();
+    Tracking* GetTracker();  // expose the tracker
 
 private:
     bool SetCallStackSize (const rlim_t kNewStackSize);

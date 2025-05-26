@@ -1,1 +1,8 @@
-/home/usr/data/ExplOrbSLAM_working/devel/.private/hector_moveit_gazebo_worlds/lib/pkgconfig/hector_moveit_gazebo_worlds.pc
+prefix=/home/farhan/data/ExplOrbSLAM_ws/devel
+
+Name: hector_moveit_gazebo_worlds
+Description: Description of hector_moveit_gazebo_worlds
+Version: 1.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

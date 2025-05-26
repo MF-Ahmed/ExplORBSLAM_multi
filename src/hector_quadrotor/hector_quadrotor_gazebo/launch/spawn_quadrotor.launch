@@ -13,11 +13,6 @@
   <arg name="x" default="0.0"/>
   <arg name="y" default="0.0"/>
   <arg name="z" default="0.3"/>
-  <arg name="roll" default="0.0"/>
-  <arg name="pitch" default="0.0"/>
-  <arg name="yaw" default="0.0"/>  
-  
-  
 
   <arg name="use_ground_truth_for_tf" default="true" />
   <arg name="use_ground_truth_for_control" default="true" />
@@ -37,7 +32,7 @@
 
   <!-- start robot state publisher -->
   <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher" output="screen" >
-    <param name="publish_frequency" type="double" value="100.0" />  <!-- default = 50 -->
+    <param name="publish_frequency" type="double" value="50.0" />
   </node>
 
   <!-- publish state and tf -->
@@ -87,9 +82,6 @@
            -x $(arg x)
            -y $(arg y)
            -z $(arg z)
- 	    -R $(arg roll)
-           -P $(arg pitch)
-           -Y $(arg yaw)           
            -model $(arg name)"
         respawn="false" output="screen"/>
 

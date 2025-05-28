@@ -1,4 +1,6 @@
-#!/usr/bin/env python3The filter nodes receives the detected frontier points from all the detectors,
+#!/usr/bin/env python3
+
+# The filter nodes receives the detected frontier points from all the detectors,
 # filters the points, and passes them to the assigner node to command the robots.
 # Filtration includes the deletion of old and invalid points, and it also
 # discards redundant points.

@@ -1,4 +1,4 @@
-image: /home/usr/data/ExplOrbSLAM_working/src/src/maps/drone/new_drone_map.pgm
+image: /home/farhan/data/ros1_ws/src/ExplORBSLAM_multi/src/src/maps/drone/new_drone_map.pgm
 resolution: 0.100000
 origin: [-10.000000, -6.00000, 0.000000]
 negate: 0

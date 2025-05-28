@@ -252,7 +252,7 @@
     <arg name="odom_frame" value="world"/>
   </include>  -->
 
-   <node name="map_server2" pkg="map_server" type="map_server" args="/home/usr/data/ExplOrbSLAM_working/src/src/maps/drone/new_drone_map.yaml" output="screen">    
+   <node name="map_server2" pkg="map_server" type="map_server" args="/home/farhan/data/ros1_ws/src/ExplORBSLAM_multi/src/src/maps/drone/new_drone_map.yaml" output="screen">    
     <remap from="/map" to="/drone_map"/>   
    </node> 
     

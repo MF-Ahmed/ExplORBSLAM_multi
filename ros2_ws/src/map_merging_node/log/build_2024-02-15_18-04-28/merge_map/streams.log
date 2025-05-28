@@ -1,0 +1,43 @@
+[0.722s] Invoking command in '/home/usr/data/ros2_ws/src/map_merging_node/src/merge_map': PYTHONPATH=/home/usr/data/ros2_ws/src/map_merging_node/build/merge_map/prefix_override:/home/usr/data/ros2_ws/src/map_merging_node/install/merge_map/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/merge_map build --build-base /home/usr/data/ros2_ws/src/map_merging_node/build/merge_map/build install --record /home/usr/data/ros2_ws/src/map_merging_node/build/merge_map/install.log --single-version-externally-managed
+[0.924s] running egg_info
+[0.924s] creating ../../build/merge_map/merge_map.egg-info
+[0.932s] writing ../../build/merge_map/merge_map.egg-info/PKG-INFO
+[0.932s] writing dependency_links to ../../build/merge_map/merge_map.egg-info/dependency_links.txt
+[0.932s] writing entry points to ../../build/merge_map/merge_map.egg-info/entry_points.txt
+[0.932s] writing requirements to ../../build/merge_map/merge_map.egg-info/requires.txt
+[0.932s] writing top-level names to ../../build/merge_map/merge_map.egg-info/top_level.txt
+[0.944s] writing manifest file '../../build/merge_map/merge_map.egg-info/SOURCES.txt'
+[0.961s] reading manifest file '../../build/merge_map/merge_map.egg-info/SOURCES.txt'
+[0.962s] writing manifest file '../../build/merge_map/merge_map.egg-info/SOURCES.txt'
+[0.962s] running build
+[0.962s] running build_py
+[0.962s] creating /home/usr/data/ros2_ws/src/map_merging_node/build/merge_map/build
+[0.962s] creating /home/usr/data/ros2_ws/src/map_merging_node/build/merge_map/build/lib
+[0.962s] creating /home/usr/data/ros2_ws/src/map_merging_node/build/merge_map/build/lib/merge_map
+[0.962s] copying merge_map/merge_map.py -> /home/usr/data/ros2_ws/src/map_merging_node/build/merge_map/build/lib/merge_map
+[0.962s] copying merge_map/__init__.py -> /home/usr/data/ros2_ws/src/map_merging_node/build/merge_map/build/lib/merge_map
+[0.962s] running install
+[0.962s] /home/usr/.local/lib/python3.8/site-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+[0.962s]   warnings.warn(
+[0.965s] running install_lib
+[0.974s] creating /home/usr/data/ros2_ws/src/map_merging_node/install/merge_map/lib/python3.8/site-packages/merge_map
+[0.974s] copying /home/usr/data/ros2_ws/src/map_merging_node/build/merge_map/build/lib/merge_map/merge_map.py -> /home/usr/data/ros2_ws/src/map_merging_node/install/merge_map/lib/python3.8/site-packages/merge_map
+[0.974s] copying /home/usr/data/ros2_ws/src/map_merging_node/build/merge_map/build/lib/merge_map/__init__.py -> /home/usr/data/ros2_ws/src/map_merging_node/install/merge_map/lib/python3.8/site-packages/merge_map
+[0.974s] byte-compiling /home/usr/data/ros2_ws/src/map_merging_node/install/merge_map/lib/python3.8/site-packages/merge_map/merge_map.py to merge_map.cpython-38.pyc
+[0.975s] byte-compiling /home/usr/data/ros2_ws/src/map_merging_node/install/merge_map/lib/python3.8/site-packages/merge_map/__init__.py to __init__.cpython-38.pyc
+[0.975s] running install_data
+[0.983s] creating /home/usr/data/ros2_ws/src/map_merging_node/install/merge_map/share/ament_index
+[0.983s] creating /home/usr/data/ros2_ws/src/map_merging_node/install/merge_map/share/ament_index/resource_index
+[0.983s] creating /home/usr/data/ros2_ws/src/map_merging_node/install/merge_map/share/ament_index/resource_index/packages
+[0.983s] copying resource/merge_map -> /home/usr/data/ros2_ws/src/map_merging_node/install/merge_map/share/ament_index/resource_index/packages
+[0.983s] copying package.xml -> /home/usr/data/ros2_ws/src/map_merging_node/install/merge_map/share/merge_map
+[0.983s] creating /home/usr/data/ros2_ws/src/map_merging_node/install/merge_map/share/merge_map/launch
+[0.983s] copying launch/merge_map_launch.py -> /home/usr/data/ros2_ws/src/map_merging_node/install/merge_map/share/merge_map/launch
+[0.983s] creating /home/usr/data/ros2_ws/src/map_merging_node/install/merge_map/share/merge_map/config
+[0.983s] copying config/merge_map.rviz -> /home/usr/data/ros2_ws/src/map_merging_node/install/merge_map/share/merge_map/config
+[0.983s] running install_egg_info
+[0.992s] Copying ../../build/merge_map/merge_map.egg-info to /home/usr/data/ros2_ws/src/map_merging_node/install/merge_map/lib/python3.8/site-packages/merge_map-0.0.0-py3.8.egg-info
+[0.992s] running install_scripts
+[1.027s] Installing merge_map script to /home/usr/data/ros2_ws/src/map_merging_node/install/merge_map/lib/merge_map
+[1.027s] writing list of installed files to '/home/usr/data/ros2_ws/src/map_merging_node/build/merge_map/install.log'
+[1.041s] Invoked command in '/home/usr/data/ros2_ws/src/map_merging_node/src/merge_map' returned '0': PYTHONPATH=/home/usr/data/ros2_ws/src/map_merging_node/build/merge_map/prefix_override:/home/usr/data/ros2_ws/src/map_merging_node/install/merge_map/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/merge_map build --build-base /home/usr/data/ros2_ws/src/map_merging_node/build/merge_map/build install --record /home/usr/data/ros2_ws/src/map_merging_node/build/merge_map/install.log --single-version-externally-managed

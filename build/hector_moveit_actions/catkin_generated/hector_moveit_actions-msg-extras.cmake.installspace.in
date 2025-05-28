@@ -1,2 +1,0 @@
-set(hector_moveit_actions_MESSAGE_FILES "msg/ExecuteDroneTrajectoryAction.msg;msg/ExecuteDroneTrajectoryActionGoal.msg;msg/ExecuteDroneTrajectoryActionResult.msg;msg/ExecuteDroneTrajectoryActionFeedback.msg;msg/ExecuteDroneTrajectoryGoal.msg;msg/ExecuteDroneTrajectoryResult.msg;msg/ExecuteDroneTrajectoryFeedback.msg")
-set(hector_moveit_actions_SERVICE_FILES "")

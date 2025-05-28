@@ -1,1 +1,0 @@
-/home/usr/data/ExplOrbSLAM_working/devel/.private/orb_slam2_ros/lib/python3/dist-packages/orb_slam2_ros/cfg/__init__.py

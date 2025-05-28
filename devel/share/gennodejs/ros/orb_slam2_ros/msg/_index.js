@@ -1,1 +1,0 @@
-/home/usr/data/ExplOrbSLAM_working/devel/.private/orb_slam2_ros/share/gennodejs/ros/orb_slam2_ros/msg/_index.js

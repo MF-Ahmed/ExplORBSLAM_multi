@@ -1,1 +1,0 @@
-/home/usr/data/ExplOrbSLAM_working/devel/.private/ccmslam/share/gennodejs/ros/ccmslam/srv/ServiceSaveMap.js

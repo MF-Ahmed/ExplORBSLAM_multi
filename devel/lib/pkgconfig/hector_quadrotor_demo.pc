@@ -1,1 +1,0 @@
-/home/usr/data/ExplOrbSLAM_working/devel/.private/hector_quadrotor_demo/lib/pkgconfig/hector_quadrotor_demo.pc

@@ -1,1 +1,0 @@
-/home/usr/data/ExplOrbSLAM_working/devel/.private/graph_d_exploration/share/roseus/ros/graph_d_exploration/msg/ChooseGoalGoal.l

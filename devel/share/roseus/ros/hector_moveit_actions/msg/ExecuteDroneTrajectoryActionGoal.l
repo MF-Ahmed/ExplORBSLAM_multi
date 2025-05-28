@@ -1,1 +1,0 @@
-/home/usr/data/ExplOrbSLAM_working/devel/.private/hector_moveit_actions/share/roseus/ros/hector_moveit_actions/msg/ExecuteDroneTrajectoryActionGoal.l

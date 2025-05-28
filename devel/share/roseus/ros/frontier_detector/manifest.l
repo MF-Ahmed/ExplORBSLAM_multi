@@ -1,1 +1,0 @@
-/home/usr/data/ExplOrbSLAM_working/devel/.private/frontier_detector/share/roseus/ros/frontier_detector/manifest.l

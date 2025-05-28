@@ -1,1 +1,0 @@
-/home/usr/data/ExplOrbSLAM_working/devel/.private/base_local_planner/lib/pkgconfig/base_local_planner.pc
